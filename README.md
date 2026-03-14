@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Plan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Color Scheme
+same as previous version.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Menu
+Keep it the same. but add a about me section at as well
 
-## React Compiler
+## Sections
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### A
+Beginning is the same. But instead the right empty section should the 3D CAD map of edmonton. cool.
 
-## Expanding the ESLint configuration
+### B
+Second section is fine too with the cubes and animated gradient text
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### C
+Change it from grid to column. Column item should be wide in width but not in height. like steam store.
+You can try the circular effect from winery here. Also it be cool for the colors to change based on what
+project you are hovering on, with colors changing to primary of the image of that color. neato.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### D
+Fine as is. but play with gradiencs for the background
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### E
+New about me section. Canvas should have same mask image as igem 25' menu. Should start with 3d computer. click to begin. 
+Music is Atlantic memories by vcr-classique.
+png pov hands, maybe from skull yt video?
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Info:
+Scene: Cars sidways on road. Moving back and forth slowly. Motorbike too. Human made sound of engines.
+I Like things on wheels. four wheels, two wheels. Preferably with a throttle attached.
+I like learning about them. Different models, mechanical variations, the engineerin process, the classics of the various decades and the eras that define them.
+As well as which ones are held together by glue and string. 
+Transition: wave of turkeys
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Scene: 
+But Edmonton's a nice place to be too. I like it here. The winter is dull but Spring and Summer are picturesque.
+Transition: Turkey in car coming towards the camera. Dramatic zoom in follow. Black wipe change
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Scene: in park on bycicle
+There's alot of bike paths through greenery here. Theres one that spans 30km and follows the river
+that cuts right through the middle of the city.
+The legs will be sore at the end, but the scenery is irreplacable.
+Transition: Turkey in car comming again
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Scene: all black with computer
+But im a comp sci guy. the screen life. I've stopped watching movies since the pandemic. Most of them 
+look like filler to me. Except for the odd Adult Swim show, I don't watch much in the way of series either.
+My content are usually YouTube videos. Either historical or mechanical in nature. Usually both at the same time (screenshots of videos. sam the pits. drachnifel. etc...).
+
+Hope I only wasted a little bit of your time...
