@@ -18,7 +18,7 @@ function Home() {
       <Canvas flat camera={{fov:35, near: 0.1, far: 300}}>
         <OrbitControls makeDefault/>
         <Perf position="top-left"/>
-        <color args={ [ '#fff3e0' ] } attach="background" />
+        <color args={ [ '#251500' ] } attach="background" />
 
         <Scene/>
 
