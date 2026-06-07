@@ -12,14 +12,14 @@ const pointLights = [
   { id: 6, position: [4.9, 4.7, -16.1] as [number, number, number], color: "#ffce63", intensity: 0 },
 ]
 
-function PointLightWithHelper({ position, color, intensity, index, start_spotLight }: { position: [number, number, number]; color: string; intensity: number; index: number; start_spotLight: boolean;})
+function PointLightWithHelper({ position, color, intensity, index, start_pointLights, handle_setSectionTracker }: { position: [number, number, number]; color: string; intensity: number; index: number; start_pointLights: boolean; handle_setSectionTracker: (sect: 'start_pointLights') => void;})
 {
   const lightRef = useRef<THREE.PointLight>(null!);
   useHelper(lightRef, THREE.PointLightHelper, 0.5, 'teal');
   
   useEffect(() => {
-    if (!start_spotLight) {
-      console.log(index)
+    if (!start_pointLights) {
+      //console.log(index)
       if( index==0 || index==1){
         gsap.to(lightRef.current, {
           intensity: 15,
@@ -36,11 +36,14 @@ function PointLightWithHelper({ position, color, intensity, index, start_spotLig
         gsap.to(lightRef.current, {
           intensity: 4,
           duration: 1.5,
-          delay: index + 5
+          delay: index + 5,
+                  onComplete: () => {
+          handle_setSectionTracker('start_pointLights')
+        }
         });
       }
     }
-  }, [start_spotLight, index]);
+  }, [handle_setSectionTracker, start_pointLights, index]);
 
   return (
     <pointLight 
@@ -53,20 +56,22 @@ function PointLightWithHelper({ position, color, intensity, index, start_spotLig
 }
 
 interface PointLightsProps {
-  start_spotLight: boolean;
+  start_pointLights: boolean;
+  handle_setSectionTracker: (sect: 'start_pointLights') => void;
 }
 
-function PointLights({ start_spotLight }: PointLightsProps) {
+function PointLights({ start_pointLights, handle_setSectionTracker }: PointLightsProps) {
   return(
     <>
       {pointLights.map((light, index) => (
         <PointLightWithHelper
           key={light.id}
           index={index}
-          start_spotLight={start_spotLight}
+          start_pointLights={start_pointLights}
           position={light.position}
           color={light.color}
           intensity={light.intensity}
+          handle_setSectionTracker = {handle_setSectionTracker}
         />
       ))}
     </>

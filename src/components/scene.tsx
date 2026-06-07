@@ -1,4 +1,4 @@
-import { useGLTF, useHelper } from "@react-three/drei";
+import { useGLTF, useHelper, Stars } from "@react-three/drei";
 import { useEffect, useRef } from "react"
 import * as THREE from 'three'
 import gsap from 'gsap'
@@ -20,8 +20,8 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
 
   const moonLightRef = useRef<THREE.PointLight>(null!);
   useHelper(moonLightRef, THREE.PointLightHelper, 0.5, 'teal');
-  
-  
+
+  //const starsGroupRef = useRef<THREE.Group>(null!);
   //const plane = useRef<THREE.Mesh>(null);
 
 
@@ -49,7 +49,7 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
   useEffect(() => {
     if(!sectionTracker.start_spotLight){
       gsap.to(moonLightRef.current, {
-        intensity: 150,
+        intensity: 180,
         duration: 2,
         delay: 2
       })
@@ -64,6 +64,19 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
       })
 
 
+      /*
+      if (starsGroupRef.current) {
+        gsap.to(starsGroupRef.current.scale, {
+          x: 1,
+          y: 1,
+          z: 1,
+          duration: 2,
+          delay: 1,
+          ease: 'power2.inOut',
+        });
+      }
+      */
+      
       /*
       if (plane.current) {
         gsap.to(plane.current.position, {
@@ -82,14 +95,14 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
   return(
     <>
     <group position={[0, -2, -25]}>
+
       <primitive object={blender_scene.scene} />
-      
+      <Stars radius={45} depth={30} count={500} factor={5} fade speed={1}/>
+
       {/* Imported PointLights Component */}
-      <PointLights start_spotLight={sectionTracker.start_spotLight} />
+      <PointLights start_pointLights={sectionTracker.start_pointLights} handle_setSectionTracker={handle_setSectionTracker} />
 
-      <pointLight ref={moonLightRef} color={"#32006e"} intensity={0} position={[10, 20, 14]}/>
-
-
+      <pointLight ref={moonLightRef} color={"#38007d"} intensity={0} position={[10, 15, 14]}/>
 
       <spotLight
         ref={spotLightRef}
@@ -101,6 +114,7 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
       >
         <object3D attach="target" position={[0, -50, -10]} />
       </spotLight>
+
     </group>
     </>
   )

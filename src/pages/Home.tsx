@@ -34,7 +34,6 @@ function Home() {
         <Scene sectionTracker={sectionTracker} handle_setSectionTracker={handle_setSectionTracker}/>
 
 
-
       </Canvas>
       </div>
     </>
