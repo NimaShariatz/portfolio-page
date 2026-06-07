@@ -5,12 +5,15 @@ import * as THREE from 'three'
 function Scene() {
   const blender_scene = useGLTF('./scene.glb')
 
+
+
   const pointLightRef = useRef<THREE.PointLight>(null!);
-  useHelper(pointLightRef, THREE.PointLightHelper, 1, 'teal');
+  useHelper(pointLightRef, THREE.PointLightHelper, 0.5, 'teal');
 
   const directionalLightRef = useRef<THREE.SpotLight>(null!);
   useHelper(directionalLightRef, THREE.SpotLightHelper, 'hotpink')
-
+  
+  
 
   useEffect(() =>{
     blender_scene.scene.traverse((child) => {
@@ -44,6 +47,7 @@ function Scene() {
         object={blender_scene.scene}
       />
 
+
       {/*
       <mesh position={[0, 4, 25]}>
         <sphereGeometry args={[1, 20, 20]}/>
@@ -51,24 +55,25 @@ function Scene() {
       </mesh>
       */}
 
+      <ambientLight intensity={0.01} color={"#ffb922"}/>
+      
       <pointLight 
         ref={pointLightRef} 
-        position={[6, 13, 16]} 
-        intensity={50} 
+        position={[4.9, 4.3, 13]} 
+        intensity={5} 
         color={"#ffb922"} 
       />
 
-
       <spotLight
         ref={directionalLightRef}
-        intensity={50} 
-        color={"#ffe5ae"} 
-        position={[10, 7, 14]}
-        penumbra={0.8}
-        
+        intensity={100} 
+        color={"#ffd67e"} 
+        position={[9, 9, 16]}
+        penumbra={0.9}
       >
         <object3D attach="target" position={[0, -50, 20]} />
       </spotLight>
+      
 
     </group>
     </>

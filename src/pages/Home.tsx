@@ -15,10 +15,10 @@ function Home() {
   return(
     <>
       <div className="canvas_container">
-      <Canvas flat camera={{fov:35, near: 0.1, far: 300}}>
+      <Canvas flat camera={{fov:55, near: 0.1, far: 300}}>
         <OrbitControls makeDefault/>
         <Perf position="top-left"/>
-        <color args={ [ '#251500' ] } attach="background" />
+        <color args={ [ '#070500' ] } attach="background" />
 
         <Scene/>
 
