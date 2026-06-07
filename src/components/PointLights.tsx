@@ -22,7 +22,7 @@ function PointLightWithHelper({ position, color, intensity, index, start_spotLig
       console.log(index)
       if( index==0 || index==1){
         gsap.to(lightRef.current, {
-          intensity: 10,
+          intensity: 15,
           duration: 1.5,
           delay: index + 5
         });

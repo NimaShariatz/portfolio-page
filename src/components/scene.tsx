@@ -18,7 +18,10 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
   const spotLightRef = useRef<THREE.SpotLight>(null!);
   useHelper(spotLightRef, THREE.SpotLightHelper, 'hotpink');
 
-
+  const moonLightRef = useRef<THREE.PointLight>(null!);
+  useHelper(moonLightRef, THREE.PointLightHelper, 0.5, 'teal');
+  
+  
   //const plane = useRef<THREE.Mesh>(null);
 
 
@@ -45,14 +48,21 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
 
   useEffect(() => {
     if(!sectionTracker.start_spotLight){
+      gsap.to(moonLightRef.current, {
+        intensity: 150,
+        duration: 2,
+        delay: 2
+      })
+      
       gsap.to(spotLightRef.current, {
-        intensity: 100,
+        intensity: 90,
         duration: 3,
         delay: 5,
         onComplete: () => {
           handle_setSectionTracker('start_spotLight')
         }
       })
+
 
       /*
       if (plane.current) {
@@ -71,23 +81,25 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
 
   return(
     <>
-    <group>
+    <group position={[0, -2, -25]}>
       <primitive object={blender_scene.scene} />
       
       {/* Imported PointLights Component */}
       <PointLights start_spotLight={sectionTracker.start_spotLight} />
-      
-      <ambientLight intensity={0.02} color={"#5300b8"}/>
+
+      <pointLight ref={moonLightRef} color={"#32006e"} intensity={0} position={[10, 20, 14]}/>
+
 
 
       <spotLight
         ref={spotLightRef}
         intensity={0} 
         color={"#ffce63"} 
-        position={[9, 9, 16]}
-        penumbra={0.9}
+        position={[11, 7, 16.5]}
+        penumbra={0.7}
+        angle={0.8}
       >
-        <object3D attach="target" position={[0, -50, 20]} />
+        <object3D attach="target" position={[0, -50, -10]} />
       </spotLight>
     </group>
     </>
