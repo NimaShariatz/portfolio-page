@@ -2,7 +2,8 @@ import { useGLTF, useHelper, Stars } from "@react-three/drei";
 import { useEffect, useRef } from "react"
 import * as THREE from 'three'
 import gsap from 'gsap'
-import PointLights from "./PointLights"
+import PointLights from "./pointLights"
+import Spheres from "./spheres";
 
 interface SceneProps {
   sectionTracker: {
@@ -49,7 +50,7 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
   useEffect(() => {
     if(!sectionTracker.start_spotLight){
       gsap.to(moonLightRef.current, {
-        intensity: 180,
+        intensity: 300,
         duration: 2,
         delay: 2
       })
@@ -94,15 +95,18 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
 
   return(
     <>
-    <group position={[0, -2, -25]}>
+    <group position={[-6, -3, -14]}>
 
       <primitive object={blender_scene.scene} />
+
+      <Spheres/>
+
       <Stars radius={45} depth={30} count={500} factor={5} fade speed={1}/>
 
-      {/* Imported PointLights Component */}
-      <PointLights start_pointLights={sectionTracker.start_pointLights} handle_setSectionTracker={handle_setSectionTracker} />
+      
+      <PointLights start_pointLights={sectionTracker.start_pointLights} handle_setSectionTracker={handle_setSectionTracker} />{/* Imported PointLights Component */}
 
-      <pointLight ref={moonLightRef} color={"#38007d"} intensity={0} position={[10, 15, 14]}/>
+      <pointLight ref={moonLightRef} color={"#38007d"} intensity={0} position={[8, 18, 14]}/>
 
       <spotLight
         ref={spotLightRef}

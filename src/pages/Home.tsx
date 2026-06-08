@@ -26,7 +26,7 @@ function Home() {
   return(
     <>
       <div className="canvas_container">
-      <Canvas flat camera={{fov: 55, near: 0.1, far: 300}}>
+      <Canvas camera={{fov: 55, near: 0.1, far: 300}}>
         <OrbitControls makeDefault/>
         <Perf position="top-left"/>
         <color args={ [ '#000000' ] } attach="background" />

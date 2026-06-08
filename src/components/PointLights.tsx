@@ -4,42 +4,60 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 
 const pointLights = [
-  { id: 1, position: [4.9, 4.5, 13] as [number, number, number], color: "#ffce63", intensity: 0 },
-  { id: 2, position: [4.9, 4.5, 10.9] as [number, number, number], color: "#ffce63", intensity: 0 },
-  { id: 3, position: [4.9, 4.6, -1] as [number, number, number], color: "#ffce63", intensity: 0 },
-  { id: 4, position: [4.9, 4.6, -3] as [number, number, number], color: "#ffce63", intensity: 0 },
-  { id: 5, position: [4.9, 4.7, -14.1] as [number, number, number], color: "#ffce63", intensity: 0 },
-  { id: 6, position: [4.9, 4.7, -16.1] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 1, position: [9.42, 2.02, 9.70] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 2, position: [4.9, 4.5, 13] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 3, position: [4.9, 4.5, 10.9] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 4, position: [4.9, 4.6, -1] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 5, position: [4.9, 4.6, -3] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 6, position: [4.9, 4.7, -14.1] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 7, position: [4.9, 4.7, -16.1] as [number, number, number], color: "#ffce63", intensity: 0 },
+  
 ]
 
-function PointLightWithHelper({ position, color, intensity, index, start_pointLights, handle_setSectionTracker }: { position: [number, number, number]; color: string; intensity: number; index: number; start_pointLights: boolean; handle_setSectionTracker: (sect: 'start_pointLights') => void;})
+interface PointLightWithHelperInterface{
+  position: [number, number, number]
+  color: string
+  intensity: number;
+  index: number;
+  start_pointLights: boolean;
+  handle_setSectionTracker: (sect: 'start_pointLights') => void;
+}
+
+function PointLightWithHelper({ position, color, intensity, index, start_pointLights, handle_setSectionTracker }:  PointLightWithHelperInterface)
 {
   const lightRef = useRef<THREE.PointLight>(null!);
-  useHelper(lightRef, THREE.PointLightHelper, 0.5, 'teal');
+  useHelper(lightRef, THREE.PointLightHelper, 0.4, 'teal');
   
   useEffect(() => {
     if (!start_pointLights) {
-      //console.log(index)
-      if( index==0 || index==1){
+      console.log(index)
+
+      if (index==0){
+        gsap.to(lightRef.current, {
+          intensity: 0.1,
+          duration: 1.5,
+          delay: 5
+        });
+      } else if( index==1 || index==2){
         gsap.to(lightRef.current, {
           intensity: 15,
           duration: 1.5,
           delay: index + 5
         });
-      }else if(index==2 || index==3){
+      }else if(index==3 || index==4){
         gsap.to(lightRef.current, {
           intensity: 7,
           duration: 1.5,
           delay: index + 5
         });
-      }else if(index==4 || index==5){
+      }else if(index==5 || index==6){
         gsap.to(lightRef.current, {
           intensity: 4,
           duration: 1.5,
           delay: index + 5,
-                  onComplete: () => {
-          handle_setSectionTracker('start_pointLights')
-        }
+          onComplete: () => {
+            handle_setSectionTracker('start_pointLights')
+          }
         });
       }
     }
