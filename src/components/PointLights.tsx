@@ -30,7 +30,6 @@ function PointLightWithHelper({ position, color, intensity, index, start_pointLi
   
   useEffect(() => {
     if (!start_pointLights) {
-      console.log(index)
 
       if (index==0){
         gsap.to(lightRef.current, {
