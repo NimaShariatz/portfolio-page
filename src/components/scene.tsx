@@ -1,9 +1,10 @@
-import { useGLTF, useHelper, Stars } from "@react-three/drei";
+import { useGLTF, Stars } from "@react-three/drei";
 import { useEffect, useRef } from "react"
 import * as THREE from 'three'
 import gsap from 'gsap'
 import PointLights from "./pointLights"
 import Spheres from "./spheres";
+import BasicSpheres from "./basicSpheres";
 
 interface SceneProps {
   sectionTracker: {
@@ -17,10 +18,10 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
   const blender_scene = useGLTF('./scene.glb')
 
   const spotLightRef = useRef<THREE.SpotLight>(null!);
-  useHelper(spotLightRef, THREE.SpotLightHelper, 'hotpink');
+  //useHelper(spotLightRef, THREE.SpotLightHelper, 'hotpink');
 
   const moonLightRef = useRef<THREE.PointLight>(null!);
-  useHelper(moonLightRef, THREE.PointLightHelper, 0.5, 'teal');
+  //useHelper(moonLightRef, THREE.PointLightHelper, 0.5, 'teal');
 
   //const starsGroupRef = useRef<THREE.Group>(null!);
   //const plane = useRef<THREE.Mesh>(null);
@@ -98,6 +99,8 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
     <group position={[-6, -3, -14]}>
 
       <primitive object={blender_scene.scene} />
+
+      <BasicSpheres/>
 
       <Spheres/>
 

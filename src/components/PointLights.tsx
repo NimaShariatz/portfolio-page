@@ -1,4 +1,4 @@
-import { useHelper } from "@react-three/drei";
+//import { useHelper } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import * as THREE from 'three';
 import gsap from 'gsap';
@@ -26,7 +26,7 @@ interface PointLightWithHelperInterface{
 function PointLightWithHelper({ position, color, intensity, index, start_pointLights, handle_setSectionTracker }:  PointLightWithHelperInterface)
 {
   const lightRef = useRef<THREE.PointLight>(null!);
-  useHelper(lightRef, THREE.PointLightHelper, 0.4, 'teal');
+  //useHelper(lightRef, THREE.PointLightHelper, 0.4, 'teal');
   
   useEffect(() => {
     if (!start_pointLights) {
