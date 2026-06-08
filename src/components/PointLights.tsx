@@ -34,7 +34,7 @@ function PointLightWithHelper({ position, color, intensity, index, start_pointLi
 
       if (index==0){
         gsap.to(lightRef.current, {
-          intensity: 0.1,
+          intensity: 0.08,
           duration: 1.5,
           delay: 5
         });
