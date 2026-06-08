@@ -1,5 +1,6 @@
 import { useGLTF, Stars } from "@react-three/drei";
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import type { ThreeEvent } from '@react-three/fiber'
 import * as THREE from 'three'
 import gsap from 'gsap'
 import PointLights from "./pointLights"
@@ -15,6 +16,10 @@ interface SceneProps {
 }
 
 function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
+
+  const [cursorChanger, setCursorChanger] = useState(false)
+
+
   const blender_scene = useGLTF('./scene.glb');
   const bicycle = useGLTF('./bicycle.glb');
   const tablet = useGLTF('./tablet.glb');
@@ -35,6 +40,16 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
 
   const tabletLightRef = useRef<THREE.PointLight>(null!);
   //useHelper(tabletLightRef, THREE.PointLightHelper, 0.1, 'teal');
+
+
+  const coffee_1_sphere = useRef<THREE.Mesh | null>(null);
+  const coffee_2_sphere = useRef<THREE.Mesh | null>(null);
+  const coffee_3_sphere = useRef<THREE.Mesh | null>(null);
+  const coffee_4_sphere = useRef<THREE.Mesh | null>(null);
+
+
+
+
   //const starsGroupRef = useRef<THREE.Group>(null!);
   //const plane = useRef<THREE.Mesh>(null);
 
@@ -118,6 +133,20 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
 
 
 
+
+  useEffect(() =>{
+    if(cursorChanger){
+      document.body.style.cursor = 'pointer'
+    } else {
+      document.body.style.cursor = 'default'
+    }
+
+  }, [cursorChanger])
+
+
+
+
+
   return(
     <>
     <group position={[-9, -3, -15]}>
@@ -126,10 +155,57 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
       <primitive object={bicycle.scene} position={[10.5, 0, 9.35]}/>
       <primitive object={tablet.scene} position={[7.98, 1.09, 16.84]}/>
 
-      <primitive object={coffee_1.scene} position={[7.21, 1.358, 14.7]}/>
-      <primitive object={coffee_2.scene} position={[7.26, 1.101, 14.93]}/>
-      <primitive object={coffee_3.scene} position={[7.49, 1.112, 14.94]}/>
-      <primitive object={coffee_4.scene} position={[7.54, 1.075, 15.15]}/>
+      <primitive
+        object={coffee_1.scene}
+        position={[7.21, 1.358, 14.7]}
+        onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(true);
+          e.stopPropagation();
+          if (coffee_1_sphere.current) coffee_1_sphere.current.visible = true;
+        }}
+        onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(false);
+          e.stopPropagation();
+          if (coffee_1_sphere.current) coffee_1_sphere.current.visible = false;
+        }}
+      />
+      
+      <primitive object={coffee_2.scene} position={[7.26, 1.101, 14.93]}
+        onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(true);
+          e.stopPropagation();
+          if (coffee_2_sphere.current) coffee_2_sphere.current.visible = true;
+        }}
+        onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(false);
+          e.stopPropagation();
+          if (coffee_2_sphere.current) coffee_2_sphere.current.visible = false;
+        }}
+      />
+      <primitive object={coffee_3.scene} position={[7.49, 1.112, 14.94]}
+        onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(true);
+          e.stopPropagation();
+          if (coffee_3_sphere.current) coffee_3_sphere.current.visible = true;
+        }}
+        onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(false);
+          e.stopPropagation();
+          if (coffee_3_sphere.current) coffee_3_sphere.current.visible = false;
+        }}
+      />
+      <primitive object={coffee_4.scene} position={[7.54, 1.075, 15.15]}
+        onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(true);
+          e.stopPropagation();
+          if (coffee_4_sphere.current) coffee_4_sphere.current.visible = true;
+        }}
+        onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(false);
+          e.stopPropagation();
+          if (coffee_4_sphere.current) coffee_4_sphere.current.visible = false;
+        }}
+      />
 
       
       
@@ -145,23 +221,23 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
           <meshBasicMaterial color={"#c2262b"}/>
         </mesh>
 
-        <mesh position={[7.21, 1.54, 14.69]}>
+        <mesh ref={coffee_1_sphere} position={[7.21, 1.54, 14.69]} visible={false}>
           <sphereGeometry args={[0.04, 10, 10]}/>
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
 
 
-        <mesh position={[7.27, 1.33, 14.91]}>
+        <mesh ref={coffee_2_sphere} position={[7.27, 1.33, 14.91]} visible={false}>
           <sphereGeometry args={[0.04, 10, 10]}/>
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
 
-        <mesh position={[7.5, 1.33, 14.94]}>
+        <mesh ref={coffee_3_sphere} position={[7.5, 1.33, 14.94]} visible={false}>
           <sphereGeometry args={[0.04, 10, 10]}/>
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
 
-        <mesh position={[7.54, 1.26, 15.13]}>
+        <mesh ref={coffee_4_sphere} position={[7.54, 1.26, 15.13]} visible={false}>
           <sphereGeometry args={[0.04, 10, 10]}/>
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
