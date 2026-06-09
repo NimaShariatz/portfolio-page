@@ -7,35 +7,42 @@ import Scene from "../components/scene"
 
 import { useState } from "react";
 
+import PopupEdu from "../components/popupEdu/popupEdu"
 
 function Home() {
-
   
   const [sectionTracker, setSectionTracker] = useState({ //used for event tracking across components
     start_spotLight: false,
     start_pointLights: false,
-    
-
   })
   const handle_setSectionTracker = (sect: 'start_spotLight' | 'start_pointLights') => {
     setSectionTracker(prev => ({ ...prev, [sect]: true }))
   }
 
 
+  const [triggerEDU, setTriggerEdu] = useState(true);
+  const handle_triggerEDU = () =>{
+    setTriggerEdu(!triggerEDU);
+  }
+
 
   return(
     <>
-      <div className="canvas_container">
+    <div className="canvas_container">
       <Canvas camera={{fov: 55, near: 0.1, far: 300}}>
         <OrbitControls makeDefault/>
         <Perf position="top-left"/>
-        <color args={ [ '#000000' ] } attach="background" />
+        <color args={ [ '#07000f' ] } attach="background" />
 
-        <Scene sectionTracker={sectionTracker} handle_setSectionTracker={handle_setSectionTracker}/>
+        <Scene sectionTracker={sectionTracker} handle_setSectionTracker={handle_setSectionTracker} handle_triggerEDU={handle_triggerEDU}/>
 
 
       </Canvas>
-      </div>
+
+      <PopupEdu triggerEDU={triggerEDU} handle_triggerEDU={handle_triggerEDU}/>
+    
+    </div>
+      
     </>
   )
 

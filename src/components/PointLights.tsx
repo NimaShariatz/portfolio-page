@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from 'three';
 import gsap from 'gsap';
+import { spotlight_coffee_tablet } from "../constants";
 
 const pointLights = [
   { id: 1, position: [9.42, 2.02, 9.70] as [number, number, number], color: "#ffce63", intensity: 0 },
@@ -35,25 +36,25 @@ function PointLightWithHelper({ position, color, intensity, index, start_pointLi
         gsap.to(lightRef.current, {
           intensity: 0.08,
           duration: 1.5,
-          delay: 5
+          delay: spotlight_coffee_tablet
         });
       } else if( index==1 || index==2){
         gsap.to(lightRef.current, {
           intensity: 15,
           duration: 1.5,
-          delay: index + 5
+          delay: index + spotlight_coffee_tablet
         });
       }else if(index==3 || index==4){
         gsap.to(lightRef.current, {
           intensity: 7,
           duration: 1.5,
-          delay: index + 5
+          delay: index + spotlight_coffee_tablet
         });
       }else if(index==5 || index==6){
         gsap.to(lightRef.current, {
           intensity: 4,
           duration: 1.5,
-          delay: index + 5,
+          delay: index + spotlight_coffee_tablet,
           onComplete: () => {
             handle_setSectionTracker('start_pointLights')
           }

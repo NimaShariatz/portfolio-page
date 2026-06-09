@@ -1,0 +1,1 @@
+export const spotlight_coffee_tablet = 6;

@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import PointLights from "./pointLights"
 import Spheres from "./spheres";
 import { Float } from "@react-three/drei";
+import { spotlight_coffee_tablet } from "../constants";
 
 interface SceneProps {
   sectionTracker: {
@@ -13,9 +14,10 @@ interface SceneProps {
     start_pointLights: boolean
   };
   handle_setSectionTracker: (sect: 'start_spotLight' | 'start_pointLights') => void;
+  handle_triggerEDU: () => void
 }
 
-function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
+function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: SceneProps) {
 
   const [cursorChanger, setCursorChanger] = useState(false)
 
@@ -24,9 +26,9 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
   const bicycle = useGLTF('./bicycle.glb');
   const tablet = useGLTF('./tablet.glb');
   const coffee_1 = useGLTF('./coffee_2.glb');
-  const coffee_2 = useGLTF('./coffee_1.glb')
-  const coffee_3 = useGLTF('./coffee_3.glb')
-  const coffee_4 = useGLTF('./coffee_4.glb')
+  const coffee_2 = useGLTF('./coffee_1.glb');
+  const coffee_3 = useGLTF('./coffee_3.glb');
+  const coffee_4 = useGLTF('./coffee_4.glb');
   
 
   const spotLightRef = useRef<THREE.SpotLight>(null!);
@@ -46,6 +48,9 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
   const coffee_2_sphere = useRef<THREE.Mesh | null>(null);
   const coffee_3_sphere = useRef<THREE.Mesh | null>(null);
   const coffee_4_sphere = useRef<THREE.Mesh | null>(null);
+
+  const edu_sphere = useRef<THREE.Mesh | null>(null);
+  const experience_sphere = useRef<THREE.Mesh | null>(null);
 
 
 
@@ -77,28 +82,23 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
 
   useEffect(() => {
     if(!sectionTracker.start_spotLight){
-      gsap.to(moonLightRef.current, {
-        intensity: 300,
-        duration: 2,
-        delay: 2
-      })
 
       gsap.to(coffeeLightRef.current, {
         intensity: 1,
         duration: 3,
-        delay: 5,
+        delay: spotlight_coffee_tablet
       })
 
       gsap.to(tabletLightRef.current, {
         intensity: 0.04,
         duration: 3,
-        delay: 5,
+        delay: spotlight_coffee_tablet
       })
       
       gsap.to(spotLightRef.current, {
         intensity: 110,
         duration: 3,
-        delay: 5,
+        delay: spotlight_coffee_tablet,
         onComplete: () => {
           handle_setSectionTracker('start_spotLight')
         }
@@ -152,12 +152,41 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
     <group position={[-9, -3, -15]}>
 
       <primitive object={blender_scene.scene} />
-      <primitive object={bicycle.scene} position={[10.5, 0, 9.35]}/>
-      <primitive object={tablet.scene} position={[7.98, 1.09, 16.84]}/>
+      <primitive object={bicycle.scene} position={[10.5, 0, 9.35]}
+        onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(true);
+          e.stopPropagation();
+          if (edu_sphere.current) edu_sphere.current.visible = true;
+        }}
+        onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(false);
+          e.stopPropagation();
+          if (edu_sphere.current) edu_sphere.current.visible = false;
+        }}
+        onClick={(e: ThreeEvent<PointerEvent>) => {
+          e.stopPropagation();
+          handle_triggerEDU();
+        }}
+      />
 
-      <primitive
-        object={coffee_1.scene}
-        position={[7.21, 1.358, 14.7]}
+      <primitive object={tablet.scene} position={[7.98, 1.09, 16.84]}      
+        onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(true);
+          e.stopPropagation();
+          if (experience_sphere.current) experience_sphere.current.visible = true;
+        }}
+        onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
+          setCursorChanger(false);
+          e.stopPropagation();
+          if (experience_sphere.current) experience_sphere.current.visible = false;
+        }}
+        onClick={(e: ThreeEvent<PointerEvent>) => {
+          e.stopPropagation();
+          handle_triggerEDU();
+        }}
+      />
+
+      <primitive object={coffee_1.scene} position={[7.21, 1.358, 14.7]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
@@ -167,6 +196,10 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
           setCursorChanger(false);
           e.stopPropagation();
           if (coffee_1_sphere.current) coffee_1_sphere.current.visible = false;
+        }}
+        onClick={(e: ThreeEvent<PointerEvent>) => {
+          e.stopPropagation();
+          handle_triggerEDU();
         }}
       />
       
@@ -216,7 +249,7 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
       </mesh>
       
       <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh position={[9.5, 2.42, 9.5]}>
+        <mesh ref={edu_sphere} position={[9.5, 2.42, 9.5]} visible={false}>
           <sphereGeometry args={[0.04, 10, 10]}/>
           <meshBasicMaterial color={"#c2262b"}/>
         </mesh>
@@ -242,7 +275,7 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
 
-        <mesh position={[8.1, 1.35, 16.83]}>
+        <mesh ref={experience_sphere} position={[8.1, 1.35, 16.83]} visible={false}>
           <sphereGeometry args={[0.04, 10, 10]}/>
           <meshBasicMaterial color={"#8BA046"}/>
         </mesh>
@@ -256,7 +289,7 @@ function Scene({ sectionTracker, handle_setSectionTracker }: SceneProps) {
 
       <PointLights start_pointLights={sectionTracker.start_pointLights} handle_setSectionTracker={handle_setSectionTracker} />{/* Imported PointLights Component */}
 
-      <pointLight ref={moonLightRef} color={"#38007d"} intensity={0} position={[8, 18, 14]}/>
+      <pointLight ref={moonLightRef} color={"#38007d"} intensity={300} position={[8, 18, 14]}/>
       <pointLight ref={coffeeLightRef} color={"#ffefb9"} intensity={0} position={[6.65, 1.5, 15.5]}/>
       <pointLight ref={tabletLightRef} color={"#ffefb9"} intensity={0} position={[7.8, 1.3, 16.8]}/>
 
