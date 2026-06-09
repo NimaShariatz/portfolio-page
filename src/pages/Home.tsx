@@ -32,7 +32,7 @@ function Home() {
       <Canvas camera={{fov: 45, near: 0.1, far: 300}}>
         <OrbitControls makeDefault/>
         <Perf position="top-left"/>
-        <color args={ [ '#07000f' ] } attach="background" />
+        <color args={ [ '#080010' ] } attach="background" />
 
         <Scene sectionTracker={sectionTracker} handle_setSectionTracker={handle_setSectionTracker} handle_triggerEDU={handle_triggerEDU}/>
 

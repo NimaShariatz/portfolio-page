@@ -243,8 +243,8 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
       
       
    
-      <mesh position={[75, 30, 5]}>
-        <sphereGeometry args={[3, 16, 16]}/>
+      <mesh position={[85, 45, -10]}>
+        <sphereGeometry args={[2.8, 18, 18]}/>
         <meshBasicMaterial color={"#ffffff"}/>
       </mesh>
       
