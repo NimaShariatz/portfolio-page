@@ -21,7 +21,7 @@ interface PointLightWithHelperInterface{
   intensity: number;
   index: number;
   start_pointLights: boolean;
-  handle_setSectionTracker: (sect: 'start_pointLights') => void;
+  handle_setSectionTracker: (sect: 'start_pointLights' | 'trigger_camera') => void;
 }
 
 function PointLightWithHelper({ position, color, intensity, index, start_pointLights, handle_setSectionTracker }:  PointLightWithHelperInterface)
@@ -44,7 +44,16 @@ function PointLightWithHelper({ position, color, intensity, index, start_pointLi
           duration: 1.3,
           delay: index + spotlight_coffee_tablet
         });
-      }else if(index==3 || index==4){
+      }else if(index==3){
+        gsap.to(lightRef.current, {
+          intensity: 7,
+          duration: 1.3,
+          delay: index + spotlight_coffee_tablet,
+          onComplete: () => {
+            handle_setSectionTracker('trigger_camera');
+          }
+        });
+      }else if(index==4){
         gsap.to(lightRef.current, {
           intensity: 7,
           duration: 1.3,
@@ -75,7 +84,7 @@ function PointLightWithHelper({ position, color, intensity, index, start_pointLi
 
 interface PointLightsProps {
   start_pointLights: boolean;
-  handle_setSectionTracker: (sect: 'start_pointLights') => void;
+  handle_setSectionTracker: (sect: 'start_pointLights' | 'trigger_camera') => void;
 }
 
 function PointLights({ start_pointLights, handle_setSectionTracker }: PointLightsProps) {

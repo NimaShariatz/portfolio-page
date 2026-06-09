@@ -14,8 +14,9 @@ function Home() {
   const [sectionTracker, setSectionTracker] = useState({ //used for event tracking across components
     start_spotLight: false,
     start_pointLights: false,
+    trigger_camera: false
   })
-  const handle_setSectionTracker = (sect: 'start_spotLight' | 'start_pointLights') => {
+  const handle_setSectionTracker = (sect: 'start_spotLight' | 'start_pointLights' | 'trigger_camera') => {
     setSectionTracker(prev => ({ ...prev, [sect]: true }))
   }
 

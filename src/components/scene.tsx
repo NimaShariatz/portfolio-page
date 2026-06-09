@@ -12,8 +12,9 @@ interface SceneProps {
   sectionTracker: {
     start_spotLight: boolean
     start_pointLights: boolean
+    trigger_camera: boolean
   };
-  handle_setSectionTracker: (sect: 'start_spotLight' | 'start_pointLights') => void;
+  handle_setSectionTracker: (sect: 'start_spotLight' | 'start_pointLights' | 'trigger_camera') => void;
   handle_triggerEDU: () => void
 }
 
@@ -25,10 +26,10 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
   const blender_scene = useGLTF('./scene.glb');
   const bicycle = useGLTF('./bicycle.glb');
   const tablet = useGLTF('./tablet.glb');
-  const coffee_1 = useGLTF('./coffee_2.glb');
-  const coffee_2 = useGLTF('./coffee_1.glb');
-  const coffee_3 = useGLTF('./coffee_3.glb');
-  const coffee_4 = useGLTF('./coffee_4.glb');
+  const coffee_1 = useGLTF('./coffee_1.glb');
+  const coffee_2 = useGLTF('./coffee_4.glb');
+  const coffee_3 = useGLTF('./coffee_2.glb');
+  const coffee_4 = useGLTF('./coffee_3.glb');
   
 
   const spotLightRef = useRef<THREE.SpotLight>(null!);
@@ -55,8 +56,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
 
 
 
-  //const starsGroupRef = useRef<THREE.Group>(null!);
-  //const plane = useRef<THREE.Mesh>(null);
+  const scene_group_ref = useRef<THREE.Group>(null!);
 
 
   useEffect(() => {
@@ -104,33 +104,27 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         }
       })
 
-
-      /*
-      if (starsGroupRef.current) {
-        gsap.to(starsGroupRef.current.scale, {
-          x: 1,
-          y: 1,
-          z: 1,
-          duration: 2,
-          delay: 1,
-          ease: 'power2.inOut',
-        });
-      }
-      */
-      
-      /*
-      if (plane.current) {
-        gsap.to(plane.current.position, {
-          z: -50,
-          duration: 10,
-          delay: 3
-        })
-      }//if
-      */
     }
   },[handle_setSectionTracker, sectionTracker.start_spotLight])
   
+  useEffect(() => {
+    if(sectionTracker.trigger_camera){
 
+      gsap.to(scene_group_ref.current.position, {
+        x: -13,
+        z: -10,
+        y: -2.5,
+        duration: 3,
+        ease: "power1.inOut"
+      })
+      gsap.to(scene_group_ref.current.rotation, {
+        y: THREE.MathUtils.degToRad(38),
+        duration: 3,
+        ease: "power1.inOut"
+      })
+    }
+
+  }, [sectionTracker.trigger_camera])
 
 
 
@@ -149,7 +143,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
 
   return(
     <>
-    <group position={[-15, -3.3, -15]} rotation={[0, THREE.MathUtils.degToRad(45), 0]}>
+    <group ref={scene_group_ref} position={[-15, -3.3, -15]} rotation={[0, THREE.MathUtils.degToRad(45), 0]}>
 
       <primitive object={blender_scene.scene} />
       <primitive object={bicycle.scene} position={[10.5, 0, 9.35]}
@@ -214,6 +208,10 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
           e.stopPropagation();
           if (coffee_2_sphere.current) coffee_2_sphere.current.visible = false;
         }}
+        onClick={(e: ThreeEvent<PointerEvent>) => {
+          e.stopPropagation();
+          handle_triggerEDU();
+        }}
       />
       <primitive object={coffee_3.scene} position={[7.49, 1.112, 14.94]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
@@ -226,6 +224,10 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
           e.stopPropagation();
           if (coffee_3_sphere.current) coffee_3_sphere.current.visible = false;
         }}
+        onClick={(e: ThreeEvent<PointerEvent>) => {
+          e.stopPropagation();
+          handle_triggerEDU();
+        }}
       />
       <primitive object={coffee_4.scene} position={[7.54, 1.075, 15.15]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
@@ -237,6 +239,10 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
           setCursorChanger(false);
           e.stopPropagation();
           if (coffee_4_sphere.current) coffee_4_sphere.current.visible = false;
+        }}
+        onClick={(e: ThreeEvent<PointerEvent>) => {
+          e.stopPropagation();
+          handle_triggerEDU();
         }}
       />
 
