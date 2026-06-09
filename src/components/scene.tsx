@@ -149,7 +149,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
 
   return(
     <>
-    <group position={[0, 0, 0]}>
+    <group position={[-15, -3.3, -15]} rotation={[0, THREE.MathUtils.degToRad(45), 0]}>
 
       <primitive object={blender_scene.scene} />
       <primitive object={bicycle.scene} position={[10.5, 0, 9.35]}

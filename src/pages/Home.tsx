@@ -1,6 +1,6 @@
 import "./Home.css"
 
-//import { OrbitControls } from "@react-three/drei"
+import { OrbitControls } from "@react-three/drei"
 import { Canvas } from '@react-three/fiber'
 import { Perf } from "r3f-perf"
 import Scene from "../components/scene"
@@ -29,8 +29,8 @@ function Home() {
   return(
     <>
     <div className="canvas_container">
-      <Canvas camera={{fov: 45, near: 0.1, far: 300, position:[-7 , 4 , 25], rotation:[0, -0.82, 0]}}>
-        {/*<OrbitControls makeDefault/>*/}
+      <Canvas camera={{fov: 45, near: 0.1, far: 300}}>
+        <OrbitControls makeDefault/>
         <Perf position="top-left"/>
         <color args={ [ '#07000f' ] } attach="background" />
 

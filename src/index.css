@@ -20,3 +20,11 @@ body,
   height: 100%;
 }
 
+.text_in_scene{
+  background: #ff0000;
+  color: white;
+  font-weight: 800;
+  user-select: none;
+  text-transform: uppercase;
+}
+
