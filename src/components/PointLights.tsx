@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { spotlight_coffee_tablet } from "../constants";
 
 const pointLights = [
-  { id: 1, position: [9.42, 2.02, 9.70] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 1, position: [9.42, 2.05, 9.70] as [number, number, number], color: "#ffce63", intensity: 0 },
   { id: 2, position: [4.9, 4.5, 13] as [number, number, number], color: "#ffce63", intensity: 0 },
   { id: 3, position: [4.9, 4.5, 10.9] as [number, number, number], color: "#ffce63", intensity: 0 },
   { id: 4, position: [4.9, 4.6, -1] as [number, number, number], color: "#ffce63", intensity: 0 },
@@ -34,26 +34,26 @@ function PointLightWithHelper({ position, color, intensity, index, start_pointLi
 
       if (index==0){
         gsap.to(lightRef.current, {
-          intensity: 0.08,
-          duration: 1.5,
+          intensity: 0.15,
+          duration: 1.3,
           delay: spotlight_coffee_tablet
         });
       } else if( index==1 || index==2){
         gsap.to(lightRef.current, {
           intensity: 15,
-          duration: 1.5,
+          duration: 1.3,
           delay: index + spotlight_coffee_tablet
         });
       }else if(index==3 || index==4){
         gsap.to(lightRef.current, {
           intensity: 7,
-          duration: 1.5,
+          duration: 1.3,
           delay: index + spotlight_coffee_tablet
         });
       }else if(index==5 || index==6){
         gsap.to(lightRef.current, {
           intensity: 4,
-          duration: 1.5,
+          duration: 1.3,
           delay: index + spotlight_coffee_tablet,
           onComplete: () => {
             handle_setSectionTracker('start_pointLights')

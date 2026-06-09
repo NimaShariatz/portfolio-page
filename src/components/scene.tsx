@@ -149,7 +149,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
 
   return(
     <>
-    <group position={[-9, -3, -15]}>
+    <group position={[0, 0, 0]}>
 
       <primitive object={blender_scene.scene} />
       <primitive object={bicycle.scene} position={[10.5, 0, 9.35]}
@@ -249,8 +249,8 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
       </mesh>
       
       <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={edu_sphere} position={[9.5, 2.42, 9.5]} visible={false}>
-          <sphereGeometry args={[0.04, 10, 10]}/>
+        <mesh ref={edu_sphere} position={[9.5, 2.42, 9.52]} visible={false}>
+          <sphereGeometry args={[0.07, 10, 10]}/>
           <meshBasicMaterial color={"#c2262b"}/>
         </mesh>
 
@@ -276,7 +276,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         </mesh>
 
         <mesh ref={experience_sphere} position={[8.1, 1.35, 16.83]} visible={false}>
-          <sphereGeometry args={[0.04, 10, 10]}/>
+          <sphereGeometry args={[0.05, 10, 10]}/>
           <meshBasicMaterial color={"#8BA046"}/>
         </mesh>
       </Float>
@@ -289,7 +289,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
 
       <PointLights start_pointLights={sectionTracker.start_pointLights} handle_setSectionTracker={handle_setSectionTracker} />{/* Imported PointLights Component */}
 
-      <pointLight ref={moonLightRef} color={"#38007d"} intensity={300} position={[8, 18, 14]}/>
+      <pointLight ref={moonLightRef} color={"#220028"} intensity={400} position={[7, 14, 14]}/>
       <pointLight ref={coffeeLightRef} color={"#ffefb9"} intensity={0} position={[6.65, 1.5, 15.5]}/>
       <pointLight ref={tabletLightRef} color={"#ffefb9"} intensity={0} position={[7.8, 1.3, 16.8]}/>
 

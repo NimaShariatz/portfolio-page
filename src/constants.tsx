@@ -1,1 +1,1 @@
-export const spotlight_coffee_tablet = 10;
+export const spotlight_coffee_tablet = 2;
