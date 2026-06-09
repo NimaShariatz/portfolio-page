@@ -5,7 +5,7 @@ import * as THREE from 'three'
 import gsap from 'gsap'
 import PointLights from "./pointLights"
 import Spheres from "./spheres";
-import { Float } from "@react-three/drei";
+import { Float, Html } from "@react-three/drei";
 import { spotlight_coffee_tablet } from "../constants";
 
 interface SceneProps {
@@ -50,8 +50,8 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
   const coffee_3_sphere = useRef<THREE.Mesh | null>(null);
   const coffee_4_sphere = useRef<THREE.Mesh | null>(null);
 
-  const edu_sphere = useRef<THREE.Mesh | null>(null);
-  const experience_sphere = useRef<THREE.Mesh | null>(null);
+  const bicycle_sphere = useRef<THREE.Mesh | null>(null);
+  const tablet_sphere = useRef<THREE.Mesh | null>(null);
 
 
 
@@ -150,12 +150,12 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
-          if (edu_sphere.current) edu_sphere.current.visible = true;
+          if (bicycle_sphere.current) bicycle_sphere.current.visible = true;
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(false);
           e.stopPropagation();
-          if (edu_sphere.current) edu_sphere.current.visible = false;
+          if (bicycle_sphere.current) bicycle_sphere.current.visible = false;
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
@@ -167,12 +167,20 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
-          if (experience_sphere.current) experience_sphere.current.visible = true;
+          if (tablet_sphere.current) tablet_sphere.current.visible = false;
+          const htmlEl = document.querySelector('.experience_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '1';
+          }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(false);
           e.stopPropagation();
-          if (experience_sphere.current) experience_sphere.current.visible = false;
+          if (tablet_sphere.current) tablet_sphere.current.visible = true;
+          const htmlEl = document.querySelector('.experience_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '0';
+          }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
@@ -255,7 +263,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
       </mesh>
       
       <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={edu_sphere} position={[9.5, 2.42, 9.52]} visible={false}>
+        <mesh ref={bicycle_sphere} position={[9.5, 2.42, 9.52]} visible={false}>
           <sphereGeometry args={[0.07, 10, 10]}/>
           <meshBasicMaterial color={"#c2262b"}/>
         </mesh>
@@ -281,12 +289,26 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
 
-        <mesh ref={experience_sphere} position={[8.1, 1.35, 16.83]} visible={false}>
+      </Float>
+
+      
+      <group position={[8.1, 1.35, 16.83]}>
+        <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
+        <mesh ref={tablet_sphere}  visible={true}>
           <sphereGeometry args={[0.05, 10, 10]}/>
           <meshBasicMaterial color={"#8BA046"}/>
         </mesh>
-      </Float>
-
+        </Float>
+          <Html
+          position={[0, 0.1, 0]}
+          wrapperClass="experience_text_in_scene"
+          center
+          distanceFactor={7}
+          visible={false}
+          >
+            EXPERIENCE
+          </Html>
+        </group>
 
 
       <Spheres/>
