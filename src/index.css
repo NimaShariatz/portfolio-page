@@ -21,19 +21,34 @@ body,
   color: aliceblue
 }
 
-.experience_text_in_scene > div, .education_text_in_scene > div, .proj1_in_scene > div, .proj2_in_scene > div, .proj3_in_scene > div, .proj4_in_scene > div {
+.experience_text_in_scene > div, .education_text_in_scene > div, .proj1_text_in_scene > div, .proj2_text_in_scene > div, .proj3_text_in_scene > div, .proj4_text_in_scene > div {
   font-weight: 800;
   user-select: none;
   padding-block: 5px;
   padding-inline: 10px;
   border-radius: 5px;
+  backdrop-filter: blur(1px);
   opacity: 0;
+  pointer-events: none;
+
+  white-space: nowrap;/* no new lines*/
+  display: inline-block;/* no new lines*/
 }
 
 .experience_text_in_scene > div {
   outline: 3px solid #8BA046;
   background-color: #8ba04621;
 
+}
+
+.education_text_in_scene > div {
+  outline: 3px solid #c2262b46;
+  background-color: #c2262b21;
+}
+
+.proj1_text_in_scene > div, .proj2_text_in_scene > div, .proj3_text_in_scene > div, .proj4_text_in_scene > div {
+  outline: 3px solid #b8ae8946;
+  background-color: #b8ae8921;
 }
 
 

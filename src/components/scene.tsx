@@ -146,16 +146,25 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
     <group ref={scene_group_ref} position={[-15, -3.3, -15]} rotation={[0, THREE.MathUtils.degToRad(45), 0]}>
 
       <primitive object={blender_scene.scene} />
+
       <primitive object={bicycle.scene} position={[10.5, 0, 9.35]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
-          if (bicycle_sphere.current) bicycle_sphere.current.visible = true;
+          if (bicycle_sphere.current) bicycle_sphere.current.visible = false;
+          const htmlEl = document.querySelector('.education_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '1';
+          }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(false);
           e.stopPropagation();
-          if (bicycle_sphere.current) bicycle_sphere.current.visible = false;
+          if (bicycle_sphere.current) bicycle_sphere.current.visible = true;
+          const htmlEl = document.querySelector('.education_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '0';
+          }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
@@ -192,12 +201,20 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
-          if (coffee_1_sphere.current) coffee_1_sphere.current.visible = true;
+          if (coffee_1_sphere.current) coffee_1_sphere.current.visible = false;
+          const htmlEl = document.querySelector('.proj1_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '1';
+          }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(false);
           e.stopPropagation();
-          if (coffee_1_sphere.current) coffee_1_sphere.current.visible = false;
+          if (coffee_1_sphere.current) coffee_1_sphere.current.visible = true;
+          const htmlEl = document.querySelector('.proj1_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '0';
+          }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
@@ -209,44 +226,72 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
-          if (coffee_2_sphere.current) coffee_2_sphere.current.visible = true;
+          if (coffee_2_sphere.current) coffee_2_sphere.current.visible = false;
+          const htmlEl = document.querySelector('.proj2_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '1';
+          }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(false);
           e.stopPropagation();
-          if (coffee_2_sphere.current) coffee_2_sphere.current.visible = false;
+          if (coffee_2_sphere.current) coffee_2_sphere.current.visible = true;
+          const htmlEl = document.querySelector('.proj2_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '0';
+          }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
           handle_triggerEDU();
         }}
       />
+
+
       <primitive object={coffee_3.scene} position={[7.49, 1.112, 14.94]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
-          if (coffee_3_sphere.current) coffee_3_sphere.current.visible = true;
+          if (coffee_3_sphere.current) coffee_3_sphere.current.visible = false;
+          const htmlEl = document.querySelector('.proj3_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '1';
+          }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(false);
           e.stopPropagation();
-          if (coffee_3_sphere.current) coffee_3_sphere.current.visible = false;
+          if (coffee_3_sphere.current) coffee_3_sphere.current.visible = true;
+          const htmlEl = document.querySelector('.proj3_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '0';
+          }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
           handle_triggerEDU();
         }}
       />
+
+
       <primitive object={coffee_4.scene} position={[7.54, 1.075, 15.15]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
-          if (coffee_4_sphere.current) coffee_4_sphere.current.visible = true;
+          if (coffee_4_sphere.current) coffee_4_sphere.current.visible = false;
+          const htmlEl = document.querySelector('.proj4_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '1';
+          }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(false);
           e.stopPropagation();
-          if (coffee_4_sphere.current) coffee_4_sphere.current.visible = false;
+          if (coffee_4_sphere.current) coffee_4_sphere.current.visible = true;
+          const htmlEl = document.querySelector('.proj4_text_in_scene > div') as HTMLDivElement | null;
+          if (htmlEl) {
+            htmlEl.style.opacity = '0';
+          }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
@@ -260,38 +305,26 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
       <mesh position={[85, 45, -10]}>
         <sphereGeometry args={[2.8, 18, 18]}/>
         <meshBasicMaterial color={"#ffffff"}/>
-      </mesh>
-      
-      <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={bicycle_sphere} position={[9.5, 2.42, 9.52]} visible={false}>
+      </mesh>      
+
+      <group position={[9.5, 2.42, 9.52]}>
+        <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
+        <mesh ref={bicycle_sphere} visible={true}>
           <sphereGeometry args={[0.07, 10, 10]}/>
           <meshBasicMaterial color={"#c2262b"}/>
         </mesh>
+        </Float>
+        <Html
+        position={[0, 0.1, 0]}
+        wrapperClass="education_text_in_scene"
+        center
+        distanceFactor={7}
+        >
+          EDUCATION
+        </Html>
+      </group>
 
-        <mesh ref={coffee_1_sphere} position={[7.21, 1.54, 14.69]} visible={false}>
-          <sphereGeometry args={[0.04, 10, 10]}/>
-          <meshBasicMaterial color={"#b8ae89"}/>
-        </mesh>
 
-
-        <mesh ref={coffee_2_sphere} position={[7.27, 1.33, 14.91]} visible={false}>
-          <sphereGeometry args={[0.04, 10, 10]}/>
-          <meshBasicMaterial color={"#b8ae89"}/>
-        </mesh>
-
-        <mesh ref={coffee_3_sphere} position={[7.5, 1.33, 14.94]} visible={false}>
-          <sphereGeometry args={[0.04, 10, 10]}/>
-          <meshBasicMaterial color={"#b8ae89"}/>
-        </mesh>
-
-        <mesh ref={coffee_4_sphere} position={[7.54, 1.26, 15.13]} visible={false}>
-          <sphereGeometry args={[0.04, 10, 10]}/>
-          <meshBasicMaterial color={"#b8ae89"}/>
-        </mesh>
-
-      </Float>
-
-      
       <group position={[8.1, 1.35, 16.83]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={tablet_sphere}  visible={true}>
@@ -299,16 +332,86 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
           <meshBasicMaterial color={"#8BA046"}/>
         </mesh>
         </Float>
-          <Html
-          position={[0, 0.1, 0]}
-          wrapperClass="experience_text_in_scene"
-          center
-          distanceFactor={7}
-          visible={false}
-          >
-            EXPERIENCE
-          </Html>
-        </group>
+        <Html
+        position={[0, 0.1, 0]}
+        wrapperClass="experience_text_in_scene"
+        center
+        distanceFactor={7}
+        >
+          EXPERIENCE
+        </Html>
+      </group>
+
+      <group position={[7.21, 1.54, 14.69]}>
+        <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
+        <mesh ref={coffee_1_sphere}  visible={true}>
+          <sphereGeometry args={[0.05, 10, 10]}/>
+          <meshBasicMaterial color={"#b8ae89"}/>
+        </mesh>
+        </Float>
+        <Html
+        position={[0, 0.1, 0]}
+        wrapperClass="proj1_text_in_scene"
+        center
+        distanceFactor={7}
+        >
+          PROJECT 1
+        </Html>
+      </group>
+
+      <group position={[7.27, 1.33, 14.91]}>
+        <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
+        <mesh ref={coffee_2_sphere}  visible={true}>
+          <sphereGeometry args={[0.05, 10, 10]}/>
+          <meshBasicMaterial color={"#b8ae89"}/>
+        </mesh>
+        </Float>
+        <Html
+        position={[0, 0.1, 0]}
+        wrapperClass="proj2_text_in_scene"
+        center
+        distanceFactor={7}
+        >
+          PROJECT 2
+        </Html>
+      </group>
+
+      <group position={[7.5, 1.33, 14.94]}>
+        <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
+        <mesh ref={coffee_3_sphere}  visible={true}>
+          <sphereGeometry args={[0.05, 10, 10]}/>
+          <meshBasicMaterial color={"#b8ae89"}/>
+        </mesh>
+        </Float>
+        <Html
+        position={[0, 0.1, 0]}
+        wrapperClass="proj3_text_in_scene"
+        center
+        distanceFactor={7}
+        >
+          PROJECT 3
+        </Html>
+      </group>
+
+      <group position={[7.54, 1.32, 15.13]}>
+        <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
+        <mesh ref={coffee_4_sphere}  visible={true}>
+          <sphereGeometry args={[0.05, 10, 10]}/>
+          <meshBasicMaterial color={"#b8ae89"}/>
+        </mesh>
+        </Float>
+        <Html
+        position={[0, 0.1, 0]}
+        wrapperClass="proj4_text_in_scene"
+        center
+        distanceFactor={7}
+        >
+          PROJECT 4
+        </Html>
+      </group>
+
+
+
 
 
       <Spheres/>
