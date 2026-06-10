@@ -8,6 +8,7 @@ import Scene from "../components/scene"
 import { useState } from "react";
 
 import PopupEdu from "../components/popupEdu/popupEdu"
+import ShortcutCircles from "../components/shortcutCircles/shortcutCircles"
 
 function Home() {
   
@@ -40,6 +41,7 @@ function Home() {
 
       </Canvas>
 
+      <ShortcutCircles camera_trigger={sectionTracker.trigger_camera} triggerEDU={triggerEDU} handle_triggerEDU={handle_triggerEDU}/>
       <PopupEdu triggerEDU={triggerEDU} handle_triggerEDU={handle_triggerEDU}/>
 
     

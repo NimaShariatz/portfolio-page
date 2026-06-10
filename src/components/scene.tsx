@@ -131,10 +131,6 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         coffee_3_sphere.current.visible = true;
         coffee_4_sphere.current.visible = true;
       }
-    
-      
-    
-    
     }
   }, [sectionTracker.trigger_camera])
 
@@ -341,7 +337,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={tablet_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
-          <meshBasicMaterial color={"#8BA046"}/>
+          <meshBasicMaterial color={"#8ba046"}/>
         </mesh>
         </Float>
         <Html

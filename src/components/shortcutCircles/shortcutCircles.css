@@ -1,10 +1,45 @@
 .shortcut_container{
-    width: 100%;
-    height: 20%;
-    z-index: 2;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 2;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
 
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+
+}
+
+
+.circular_shortcut{
+  width: 30px;
+  height: 30px;
+  z-index: 5;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  opacity: 0.4;
+  transition: opacity 0.2s ease-in-out, outline-color 0.2s ease-in-out;
+  outline: 3px solid transparent;
+  transform: translateY(60px);
+  
+}
+.circular_shortcut:hover{
+  opacity: 1;
+  outline-color: aliceblue;
+}
+
+.education_shortcut{
+  background-color: #c2262b;
+}
+.proj_shortcut{
+  background-color: #b8ae89;
+}
+.experience_shortcut{
+  background-color: #8ba046;
 }
