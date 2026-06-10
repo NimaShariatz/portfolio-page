@@ -30,7 +30,28 @@ const sphereList = [
   { id: 12, position: [10.5, 6.5, 7.8], arg_values: [0.2, 10, 10], color: "#f5c47b", multi_factor: [0.05, 0.7, 0.9], reset_position: [0, 0, 45]},
     
   { id: 13, position: [8, 5.5, 8.2], arg_values: [0.2, 10, 10], color: "#ff364e", multi_factor: [-0.3, 0.8, 1], reset_position: [0, 0, 55]},
-  { id: 14, position: [8, 5.5, 8.2], arg_values: [0.2, 10, 10], color: "#ff364e", multi_factor: [-0.5, 0.71, 1.1], reset_position: [0, 0, 50]}
+  { id: 14, position: [8, 5.5, 8.2], arg_values: [0.2, 10, 10], color: "#ff364e", multi_factor: [-0.5, 0.71, 1.1], reset_position: [0, 0, 50]},
+
+  { id: 15, position: [9, 6.5, 19], arg_values: [0.4, 10, 10], color: "#ff364e", multi_factor: [0.3, 0.8, 0.2], reset_position: [0, 0, 45]},
+
+  { id: 16, position: [8, 11, 0], arg_values: [0.35, 10, 10], color: "#e7d560", multi_factor: [0.4, 0.5, 0.9], reset_position: [0, 0, 30]},
+  { id: 17, position: [8, 11, 0], arg_values: [0.3, 10, 10], color: "#e7d560", multi_factor: [0.7, 0.6, 1.1], reset_position: [0, 0, 30]},
+  
+  { id: 18, position: [5.5, 7.3, 0], arg_values: [0.3, 10, 10], color: "#a9698a", multi_factor: [0.7, 0.6, 1.1], reset_position: [0, 0, 30]},
+  
+  { id: 19, position: [13, 7, 0.4], arg_values: [0.2, 10, 10], color: "#f39b4d", multi_factor: [0.7, 0.6, 1.1], reset_position: [0, 0, 35]},
+
+  { id: 20, position: [13, 9, -2], arg_values: [0.2, 10, 10], color: "#a9698a", multi_factor: [0.7, 0.6, 1], reset_position: [0, 0, 35]},
+
+  { id: 21, position: [4, 10, -2.5], arg_values: [0.2, 10, 10], color: "#f39b4d", multi_factor: [0.7, 0.6, 1.5], reset_position: [0, 0, 45]},
+
+  { id: 22, position: [2.5, 8, -17], arg_values: [0.3, 10, 10], color: "#f5c47b", multi_factor: [0.5, 1, 1.6], reset_position: [0, 0, 45]},
+
+  { id: 23, position: [9, 9, 25], arg_values: [0.2, 10, 10], color: "#f39b4d", multi_factor: [0.5, 1, 0.8], reset_position: [0, 0, 45]},
+
+  { id: 24, position: [-6.5, 8.2, 19], arg_values: [0.25, 10, 10], color: "#ff364e", multi_factor: [0.8, 1, 0.8], reset_position: [0, 0, 45]},
+
+  { id: 25, position: [-10, 8.2, 12], arg_values: [0.2, 10, 10], color: "#f5c47b", multi_factor: [0.5, 1, 0.8], reset_position: [0, 0, 45]}
 
 
 ];// list to be rendered in a "for" statement
@@ -99,7 +120,7 @@ function Spheres() {
       />
     ))}
     {/*
-    <mesh position={[8, 5.5, 8.2]}>
+    <mesh position={[-4, 8.2, 12]}>
       <sphereGeometry/>
       <meshToonMaterial color={"#ffffff"}/>
     </mesh>
