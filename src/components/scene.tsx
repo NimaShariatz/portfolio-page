@@ -122,8 +122,20 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         duration: 3,
         ease: "power1.inOut"
       })
-    }
 
+      if(tablet_sphere.current && bicycle_sphere.current && coffee_1_sphere.current && coffee_2_sphere.current && coffee_3_sphere.current && coffee_1_sphere.current && coffee_4_sphere.current){
+        bicycle_sphere.current.visible = true;
+        tablet_sphere.current.visible = true;
+        coffee_1_sphere.current.visible = true;
+        coffee_2_sphere.current.visible = true;
+        coffee_3_sphere.current.visible = true;
+        coffee_4_sphere.current.visible = true;
+      }
+    
+      
+    
+    
+    }
   }, [sectionTracker.trigger_camera])
 
 
@@ -248,7 +260,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
       />
 
 
-      <primitive object={coffee_3.scene} position={[7.49, 1.112, 14.94]}
+      <primitive object={coffee_3.scene} position={[7.49, 1.112, 15]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
@@ -274,7 +286,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
       />
 
 
-      <primitive object={coffee_4.scene} position={[7.54, 1.075, 15.15]}
+      <primitive object={coffee_4.scene} position={[7.54, 1.11, 15.25]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
           setCursorChanger(true);
           e.stopPropagation();
@@ -309,7 +321,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
 
       <group position={[9.5, 2.42, 9.52]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={bicycle_sphere} visible={true}>
+        <mesh ref={bicycle_sphere} visible={false}>
           <sphereGeometry args={[0.07, 10, 10]}/>
           <meshBasicMaterial color={"#c2262b"}/>
         </mesh>
@@ -318,7 +330,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         position={[0, 0.1, 0]}
         wrapperClass="education_text_in_scene"
         center
-        distanceFactor={7}
+        distanceFactor={9}
         >
           EDUCATION
         </Html>
@@ -327,7 +339,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
 
       <group position={[8.1, 1.35, 16.83]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={tablet_sphere}  visible={true}>
+        <mesh ref={tablet_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
           <meshBasicMaterial color={"#8BA046"}/>
         </mesh>
@@ -342,9 +354,9 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         </Html>
       </group>
 
-      <group position={[7.21, 1.54, 14.69]}>
+      <group position={[7.21, 1.55, 14.69]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={coffee_1_sphere}  visible={true}>
+        <mesh ref={coffee_1_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
@@ -361,7 +373,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
 
       <group position={[7.27, 1.33, 14.91]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={coffee_2_sphere}  visible={true}>
+        <mesh ref={coffee_2_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
@@ -376,9 +388,9 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         </Html>
       </group>
 
-      <group position={[7.5, 1.33, 14.94]}>
+      <group position={[7.55, 1.35, 14.95]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={coffee_3_sphere}  visible={true}>
+        <mesh ref={coffee_3_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>
@@ -393,9 +405,9 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         </Html>
       </group>
 
-      <group position={[7.54, 1.32, 15.13]}>
+      <group position={[7.56, 1.35, 15.22]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
-        <mesh ref={coffee_4_sphere}  visible={true}>
+        <mesh ref={coffee_4_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
           <meshBasicMaterial color={"#b8ae89"}/>
         </mesh>

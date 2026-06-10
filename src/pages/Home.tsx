@@ -41,6 +41,7 @@ function Home() {
       </Canvas>
 
       <PopupEdu triggerEDU={triggerEDU} handle_triggerEDU={handle_triggerEDU}/>
+
     
     </div>
       
