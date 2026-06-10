@@ -43,3 +43,14 @@
 .experience_shortcut{
   background-color: #8ba046;
 }
+
+
+@media (max-width: 576px) {
+  .shortcut_container{
+    gap: 17px;
+  }
+  .circular_shortcut{
+    width: 25px;
+    height: 25px;
+  }
+}
