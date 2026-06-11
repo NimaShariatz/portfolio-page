@@ -211,7 +211,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerPopup('Edu_popup');
+          handle_triggerPopup('Exp_popup');
         }}
       />
 
@@ -236,7 +236,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerPopup('Edu_popup');;
+          handle_triggerPopup('Proj1_popup');;
         }}
       />
       
@@ -261,7 +261,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerPopup('Edu_popup');
+          handle_triggerPopup('Proj2_popup');
         }}
       />
 
@@ -287,7 +287,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerPopup('Edu_popup');
+          handle_triggerPopup('Proj3_popup');
         }}
       />
 
@@ -313,7 +313,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerPopup('Edu_popup');
+          handle_triggerPopup('Proj4_popup');
         }}
       />
 
@@ -354,7 +354,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="experience_text_in_scene"
-        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
+        style={{display: triggerPopup.Exp_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
@@ -372,7 +372,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="proj1_text_in_scene"
-        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
+        style={{display: triggerPopup.Proj1_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
@@ -390,7 +390,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="proj2_text_in_scene"
-        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
+        style={{display: triggerPopup.Proj2_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
@@ -408,7 +408,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="proj3_text_in_scene"
-        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
+        style={{display: triggerPopup.Proj3_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
@@ -426,7 +426,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="proj4_text_in_scene"
-        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
+        style={{display: triggerPopup.Proj4_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >

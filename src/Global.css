@@ -1,6 +1,14 @@
 :root{
 
   --tempo: #fff;
+  --edu_color: #c2262b;
+  --edu_border: #c2262b8f;
+
+  --exp_color: #8ba046;
+  --exp_border: #8ba0468f;
+
+  --proj_color: #b8ae89;
+  --proj_border: #b8ae898f;
   
 }
 

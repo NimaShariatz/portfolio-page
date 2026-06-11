@@ -7,8 +7,13 @@ import Scene from "../components/scene"
 
 import { useState } from "react";
 
-import PopupEdu from "../components/popupEdu/popupEdu"
+import PopupEdu from "../components/popups/popupEdu/popupEdu"
 import ShortcutCircles from "../components/shortcutCircles/shortcutCircles"
+import PopupExp from "../components/popups/popupExp/popupExp"
+import PopupProj1 from "../components/popups/popupProj1/popupProj1"
+import PopupProj2 from "../components/popups/popupProj2/popupProj2"
+import PopupProj3 from "../components/popups/popupProj3/popupProj3"
+import PopupProj4 from "../components/popups/popupProj4/popupProj4"
 
 function Home() {
   
@@ -54,7 +59,13 @@ function Home() {
       </Canvas>
 
       <ShortcutCircles camera_trigger={sectionTracker.trigger_camera} triggerPopup={triggerPopup} handle_triggerPopup={handle_triggerPopup}/>
+      
       <PopupEdu triggerPopup={triggerPopup.Edu_popup} handle_triggerPopup={handle_triggerPopup}/>
+      <PopupExp triggerPopup={triggerPopup.Exp_popup} handle_triggerPopup={handle_triggerPopup}/>
+      <PopupProj1 triggerPopup={triggerPopup.Proj1_popup} handle_triggerPopup={handle_triggerPopup}/>
+      <PopupProj2 triggerPopup={triggerPopup.Proj2_popup} handle_triggerPopup={handle_triggerPopup}/>
+      <PopupProj3 triggerPopup={triggerPopup.Proj3_popup} handle_triggerPopup={handle_triggerPopup}/>
+      <PopupProj4 triggerPopup={triggerPopup.Proj4_popup} handle_triggerPopup={handle_triggerPopup}/>
 
     
     </div>
