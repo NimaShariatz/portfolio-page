@@ -41,12 +41,14 @@ function ShortcutCircles({ triggerPopup, camera_trigger, handle_triggerPopup }: 
       className="shortcut_container"
       style={{ opacity: anyPopupOpen ? "0" : "1", pointerEvents: anyPopupOpen ? "none" : "auto" }}
     >
-      <span className="circular_shortcut education_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
-      <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
-      <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
-      <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
-      <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
-      <span className="circular_shortcut experience_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+      <div className="shortcut_circles_container" style={{backgroundColor: camera_trigger ? "rgba(0, 0, 0, 0.1)" : "transparent"}}>
+        <span className="circular_shortcut education_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+        <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+        <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+        <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+        <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+        <span className="circular_shortcut experience_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+      </div>
     </div>
   );
 }

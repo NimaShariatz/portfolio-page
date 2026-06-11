@@ -147,13 +147,15 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
 
 
   useEffect(() =>{
-    if(cursorChanger){
-      document.body.style.cursor = 'pointer'
-    } else {
-      document.body.style.cursor = 'default'
+    if(sectionTracker.trigger_camera){
+      if(cursorChanger){
+        document.body.style.cursor = 'pointer'
+      } else {
+        document.body.style.cursor = 'default'
+      }
     }
 
-  }, [cursorChanger])
+  }, [cursorChanger, sectionTracker.trigger_camera])
 
 
 
@@ -166,154 +168,190 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
       <primitive object={blender_scene.scene} />
 
       <primitive object={bicycle.scene} position={[10.5, 0, 9.35]}
-        onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(true);
-          e.stopPropagation();
-          if (bicycle_sphere.current) bicycle_sphere.current.visible = false;
-          const htmlEl = document.querySelector('.education_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '1';
+        onPointerEnter={ (e: ThreeEvent<PointerEvent>) => {
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(true);
+            e.stopPropagation();
+            if (bicycle_sphere.current) bicycle_sphere.current.visible = false;
+            const htmlEl = document.querySelector('.education_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '1';
+            }
           }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(false);
-          e.stopPropagation();
-          if (bicycle_sphere.current) bicycle_sphere.current.visible = true;
-          const htmlEl = document.querySelector('.education_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '0';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(false);
+            e.stopPropagation();
+            if (bicycle_sphere.current) bicycle_sphere.current.visible = true;
+            const htmlEl = document.querySelector('.education_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '0';
+            }
           }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
-          e.stopPropagation();
-          handle_triggerPopup('Edu_popup');
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            e.stopPropagation();
+            handle_triggerPopup('Edu_popup');
+          }
         }}
       />
 
       <primitive object={tablet.scene} position={[7.98, 1.09, 16.84]}      
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(true);
-          e.stopPropagation();
-          if (tablet_sphere.current) tablet_sphere.current.visible = false;
-          const htmlEl = document.querySelector('.experience_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '1';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(true);
+            e.stopPropagation();
+            if (tablet_sphere.current) tablet_sphere.current.visible = false;
+            const htmlEl = document.querySelector('.experience_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '1';
+            }
           }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(false);
-          e.stopPropagation();
-          if (tablet_sphere.current) tablet_sphere.current.visible = true;
-          const htmlEl = document.querySelector('.experience_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '0';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(false);
+            e.stopPropagation();
+            if (tablet_sphere.current) tablet_sphere.current.visible = true;
+            const htmlEl = document.querySelector('.experience_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '0';
+            }
           }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
-          e.stopPropagation();
-          handle_triggerPopup('Exp_popup');
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            e.stopPropagation();
+            handle_triggerPopup('Exp_popup');
+          }
         }}
       />
 
       <primitive object={coffee_1.scene} position={[7.21, 1.358, 14.7]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(true);
-          e.stopPropagation();
-          if (coffee_1_sphere.current) coffee_1_sphere.current.visible = false;
-          const htmlEl = document.querySelector('.proj1_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '1';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(true);
+            e.stopPropagation();
+            if (coffee_1_sphere.current) coffee_1_sphere.current.visible = false;
+            const htmlEl = document.querySelector('.proj1_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '1';
+            }
           }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(false);
-          e.stopPropagation();
-          if (coffee_1_sphere.current) coffee_1_sphere.current.visible = true;
-          const htmlEl = document.querySelector('.proj1_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '0';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(false);
+            e.stopPropagation();
+            if (coffee_1_sphere.current) coffee_1_sphere.current.visible = true;
+            const htmlEl = document.querySelector('.proj1_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '0';
+            }
           }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
-          e.stopPropagation();
-          handle_triggerPopup('Proj1_popup');;
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            e.stopPropagation();
+            handle_triggerPopup('Proj1_popup');
+          }
         }}
       />
       
       <primitive object={coffee_2.scene} position={[7.26, 1.101, 14.93]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(true);
-          e.stopPropagation();
-          if (coffee_2_sphere.current) coffee_2_sphere.current.visible = false;
-          const htmlEl = document.querySelector('.proj2_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '1';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(true);
+            e.stopPropagation();
+            if (coffee_2_sphere.current) coffee_2_sphere.current.visible = false;
+            const htmlEl = document.querySelector('.proj2_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '1';
+            }
           }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(false);
-          e.stopPropagation();
-          if (coffee_2_sphere.current) coffee_2_sphere.current.visible = true;
-          const htmlEl = document.querySelector('.proj2_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '0';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(false);
+            e.stopPropagation();
+            if (coffee_2_sphere.current) coffee_2_sphere.current.visible = true;
+            const htmlEl = document.querySelector('.proj2_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '0';
+            }
           }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
-          e.stopPropagation();
-          handle_triggerPopup('Proj2_popup');
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            e.stopPropagation();
+            handle_triggerPopup('Proj2_popup');
+          }
         }}
       />
 
 
       <primitive object={coffee_3.scene} position={[7.49, 1.112, 15]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(true);
-          e.stopPropagation();
-          if (coffee_3_sphere.current) coffee_3_sphere.current.visible = false;
-          const htmlEl = document.querySelector('.proj3_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '1';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(true);
+            e.stopPropagation();
+            if (coffee_3_sphere.current) coffee_3_sphere.current.visible = false;
+            const htmlEl = document.querySelector('.proj3_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '1';
+            }
           }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(false);
-          e.stopPropagation();
-          if (coffee_3_sphere.current) coffee_3_sphere.current.visible = true;
-          const htmlEl = document.querySelector('.proj3_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '0';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(false);
+            e.stopPropagation();
+            if (coffee_3_sphere.current) coffee_3_sphere.current.visible = true;
+            const htmlEl = document.querySelector('.proj3_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '0';
+            }
           }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
-          e.stopPropagation();
-          handle_triggerPopup('Proj3_popup');
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            e.stopPropagation();
+            handle_triggerPopup('Proj3_popup');
+          }
         }}
       />
 
 
       <primitive object={coffee_4.scene} position={[7.54, 1.11, 15.25]}
         onPointerEnter={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(true);
-          e.stopPropagation();
-          if (coffee_4_sphere.current) coffee_4_sphere.current.visible = false;
-          const htmlEl = document.querySelector('.proj4_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '1';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(true);
+            e.stopPropagation();
+            if (coffee_4_sphere.current) coffee_4_sphere.current.visible = false;
+            const htmlEl = document.querySelector('.proj4_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '1';
+            }
           }
         }}
         onPointerLeave={(e: ThreeEvent<PointerEvent>) => {
-          setCursorChanger(false);
-          e.stopPropagation();
-          if (coffee_4_sphere.current) coffee_4_sphere.current.visible = true;
-          const htmlEl = document.querySelector('.proj4_text_in_scene > div') as HTMLDivElement | null;
-          if (htmlEl) {
-            htmlEl.style.opacity = '0';
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            setCursorChanger(false);
+            e.stopPropagation();
+            if (coffee_4_sphere.current) coffee_4_sphere.current.visible = true;
+            const htmlEl = document.querySelector('.proj4_text_in_scene > div') as HTMLDivElement | null;
+            if (htmlEl) {
+              htmlEl.style.opacity = '0';
+            }
           }
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
-          e.stopPropagation();
-          handle_triggerPopup('Proj4_popup');
+          if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
+            e.stopPropagation();
+            handle_triggerPopup('Proj4_popup');
+          }
         }}
       />
 

@@ -1,6 +1,6 @@
 .shortcut_container{
   width: 100%;
-  height: 40px;
+  height: 45px;
   z-index: 2;
   position: absolute;
   bottom: 10px;
@@ -9,28 +9,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
   pointer-events: none;
   transition: opacity 0.2s ease-in-out;
 
 }
-
+.shortcut_circles_container{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  padding-inline: 18px;
+  height: 100%;
+  opacity: 0.5;
+  transition: opacity 0.35s ease-in-out, background-color 0.35s ease-in-out;
+  border-radius: 30px;
+}
+.shortcut_circles_container:hover{
+  opacity: 1;
+}
 
 .circular_shortcut{
-  width: 30px;
-  height: 30px;
+  width: 21px;
+  height: 21px;
   z-index: 5;
   border-radius: 50%;
   cursor: pointer;
   pointer-events: auto;
-  opacity: 0.4;
-  transition: opacity 0.2s ease-in-out, outline-color 0.2s ease-in-out;
+  transition: outline-color 0.2s ease-in-out;
   outline: 3px solid transparent;
   transform: translateY(60px);
   
 }
 .circular_shortcut:hover{
-  opacity: 1;
   outline-color: aliceblue;
 }
 
@@ -47,14 +58,15 @@
 
 @media (max-width: 576px) {
   .shortcut_container{
-    gap: 15px;
     bottom: 8px;
+    height: 35px;
   }
-  .circular_shortcut{
-    width: 20px;
-    height: 20px;
-  }
-  .circular_shortcut{
+  .shortcut_circles_container{
+    gap: 18px;
     opacity: 1;
+  }
+  .circular_shortcut{
+    width: 18px;
+    height: 18px;
   }
 }
