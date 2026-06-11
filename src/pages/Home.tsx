@@ -22,10 +22,22 @@ function Home() {
   }
 
 
-  const [triggerEDU, setTriggerEdu] = useState(false);
-  const handle_triggerEDU = () =>{
-    setTriggerEdu(!triggerEDU);
+  type PopupKey = 'Edu_popup' | 'Exp_popup' | 'Proj1_popup' | 'Proj2_popup' | 'Proj3_popup' | 'Proj4_popup'
+
+  const [triggerPopup, setTriggerPopup] = useState<Record<PopupKey, boolean>>({
+    Edu_popup: false,
+    Exp_popup: false,
+    Proj1_popup: false,
+    Proj2_popup: false,
+    Proj3_popup: false,
+    Proj4_popup: false,
+  })
+
+  const handle_triggerPopup = (sect: PopupKey) => {
+    setTriggerPopup(prev => ({ ...prev, [sect]: !prev[sect] }))
   }
+
+
 
 
   return(
@@ -36,13 +48,13 @@ function Home() {
         <Perf position="top-left"/>
         <color args={ [ '#080010' ] } attach="background" />
 
-        <Scene sectionTracker={sectionTracker} handle_setSectionTracker={handle_setSectionTracker} handle_triggerEDU={handle_triggerEDU}/>
+        <Scene sectionTracker={sectionTracker} triggerPopup={triggerPopup} handle_setSectionTracker={handle_setSectionTracker} handle_triggerPopup={handle_triggerPopup}/>
 
 
       </Canvas>
 
-      <ShortcutCircles camera_trigger={sectionTracker.trigger_camera} triggerEDU={triggerEDU} handle_triggerEDU={handle_triggerEDU}/>
-      <PopupEdu triggerEDU={triggerEDU} handle_triggerEDU={handle_triggerEDU}/>
+      <ShortcutCircles camera_trigger={sectionTracker.trigger_camera} triggerPopup={triggerPopup} handle_triggerPopup={handle_triggerPopup}/>
+      <PopupEdu triggerPopup={triggerPopup.Edu_popup} handle_triggerPopup={handle_triggerPopup}/>
 
     
     </div>

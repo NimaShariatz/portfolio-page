@@ -4,12 +4,21 @@ import gsap from "gsap";
 
 
 interface ShortcutCirclesProps {
-  triggerEDU: boolean;
   camera_trigger: boolean;
-  handle_triggerEDU: () => void;
+
+    triggerPopup: {
+    Edu_popup: boolean,
+    Exp_popup: boolean,
+    Proj1_popup: boolean,
+    Proj2_popup: boolean,
+    Proj3_popup: boolean,
+    Proj4_popup: boolean,
+  };
+
+  handle_triggerPopup: (sect: 'Edu_popup' | 'Exp_popup' | 'Proj1_popup' | 'Proj2_popup' | 'Proj3_popup' | 'Proj4_popup') => void;
 }
 
-function ShortcutCircles({ triggerEDU, camera_trigger, handle_triggerEDU }: ShortcutCirclesProps) {
+function ShortcutCircles({ triggerPopup, camera_trigger, handle_triggerPopup }: ShortcutCirclesProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -23,18 +32,21 @@ function ShortcutCircles({ triggerEDU, camera_trigger, handle_triggerEDU }: Shor
     }
   }, [camera_trigger]);
 
+   const anyPopupOpen = Object.values(triggerPopup).some(v => v === true);
+
+
   return (
     <div
       ref={containerRef}
       className="shortcut_container"
-      style={{ opacity: triggerEDU ? "0" : "1", pointerEvents: triggerEDU ? "none" : "auto" }}
+      style={{ opacity: anyPopupOpen ? "0" : "1", pointerEvents: anyPopupOpen ? "none" : "auto" }}
     >
-      <span className="circular_shortcut education_shortcut" onClick={handle_triggerEDU}></span>
-      <span className="circular_shortcut proj_shortcut" onClick={handle_triggerEDU}></span>
-      <span className="circular_shortcut proj_shortcut" onClick={handle_triggerEDU}></span>
-      <span className="circular_shortcut proj_shortcut" onClick={handle_triggerEDU}></span>
-      <span className="circular_shortcut proj_shortcut" onClick={handle_triggerEDU}></span>
-      <span className="circular_shortcut experience_shortcut" onClick={handle_triggerEDU}></span>
+      <span className="circular_shortcut education_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+      <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+      <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+      <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+      <span className="circular_shortcut proj_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
+      <span className="circular_shortcut experience_shortcut" onClick={() => handle_triggerPopup('Edu_popup')}></span>
     </div>
   );
 }

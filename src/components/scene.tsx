@@ -14,11 +14,21 @@ interface SceneProps {
     start_pointLights: boolean
     trigger_camera: boolean
   };
+
+  triggerPopup: {
+    Edu_popup: boolean,
+    Exp_popup: boolean,
+    Proj1_popup: boolean,
+    Proj2_popup: boolean,
+    Proj3_popup: boolean,
+    Proj4_popup: boolean,
+  };
+
   handle_setSectionTracker: (sect: 'start_spotLight' | 'start_pointLights' | 'trigger_camera') => void;
-  handle_triggerEDU: () => void
+  handle_triggerPopup: (sect: 'Edu_popup' | 'Exp_popup' | 'Proj1_popup' | 'Proj2_popup' | 'Proj3_popup' | 'Proj4_popup') => void;
 }
 
-function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: SceneProps) {
+function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_triggerPopup }: SceneProps) {
 
   const [cursorChanger, setCursorChanger] = useState(false)
 
@@ -176,7 +186,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerEDU();
+          handle_triggerPopup('Edu_popup');
         }}
       />
 
@@ -201,7 +211,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerEDU();
+          handle_triggerPopup('Edu_popup');
         }}
       />
 
@@ -226,7 +236,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerEDU();
+          handle_triggerPopup('Edu_popup');;
         }}
       />
       
@@ -251,7 +261,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerEDU();
+          handle_triggerPopup('Edu_popup');
         }}
       />
 
@@ -277,7 +287,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerEDU();
+          handle_triggerPopup('Edu_popup');
         }}
       />
 
@@ -303,7 +313,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         }}
         onClick={(e: ThreeEvent<PointerEvent>) => {
           e.stopPropagation();
-          handle_triggerEDU();
+          handle_triggerPopup('Edu_popup');
         }}
       />
 
@@ -325,6 +335,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="education_text_in_scene"
+        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
         center
         distanceFactor={9}
         >
@@ -343,6 +354,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="experience_text_in_scene"
+        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
@@ -360,6 +372,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="proj1_text_in_scene"
+        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
@@ -377,6 +390,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="proj2_text_in_scene"
+        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
@@ -394,6 +408,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="proj3_text_in_scene"
+        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
@@ -411,6 +426,7 @@ function Scene({ sectionTracker, handle_setSectionTracker, handle_triggerEDU }: 
         <Html
         position={[0, 0.1, 0]}
         wrapperClass="proj4_text_in_scene"
+        style={{display: triggerPopup.Edu_popup ? 'none' : 'block'}}
         center
         distanceFactor={7}
         >
