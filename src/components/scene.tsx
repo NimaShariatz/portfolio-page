@@ -33,13 +33,13 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
   const [cursorChanger, setCursorChanger] = useState(false)
 
 
-  const blender_scene = useGLTF('./scene.glb');
-  const bicycle = useGLTF('./bicycle.glb');
-  const tablet = useGLTF('./tablet.glb');
-  const coffee_1 = useGLTF('./coffee_1.glb');
-  const coffee_2 = useGLTF('./coffee_4.glb');
-  const coffee_3 = useGLTF('./coffee_2.glb');
-  const coffee_4 = useGLTF('./coffee_3.glb');
+  const blender_scene = useGLTF('./Blender/scene.glb');
+  const bicycle = useGLTF('./Blender/bicycle.glb');
+  const tablet = useGLTF('./Blender/tablet.glb');
+  const coffee_1 = useGLTF('./Blender/coffee_1.glb');
+  const coffee_2 = useGLTF('./Blender/coffee_4.glb');
+  const coffee_3 = useGLTF('./Blender/coffee_2.glb');
+  const coffee_4 = useGLTF('./Blender/coffee_3.glb');
   
 
   const spotLightRef = useRef<THREE.SpotLight>(null!);
