@@ -54,14 +54,14 @@ h1{
 }
 
 .experience_text_in_scene > div {
-  outline: 3px solid oklab(66.999% -0.06064 0.1022);
+  outline: 3px solid #8ba046;
   background-color: #8ba04621;
 
 }
 
 .education_text_in_scene > div {
-  outline: 3px solid #c2262b46;
-  background-color: #c2262b21;
+  outline: 3px solid var(--edu_color);
+  background-color: var(--edu_border);
 }
 
 .proj1_text_in_scene > div, .proj2_text_in_scene > div, .proj3_text_in_scene > div, .proj4_text_in_scene > div {
