@@ -367,7 +367,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={bicycle_sphere} visible={false}>
           <sphereGeometry args={[0.07, 10, 10]}/>
-          <meshBasicMaterial color={"#c2262b"}/>
+          <meshBasicMaterial color={"#c22652"}/>
         </mesh>
         </Float>
         <Html

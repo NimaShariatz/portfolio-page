@@ -1,8 +1,8 @@
 :root{
 
-  --tempo: #fff;
-  --edu_color: #c2262b;
-  --edu_border: #c2262b8f;
+  --popup_fontColor: aliceblue;
+  --edu_color: #c22652;
+  --edu_border: #c2265256;
 
   --exp_color: #8ba046;
   --exp_border: #8ba0468f;
@@ -12,7 +12,6 @@
   
 }
 
-
 *{
   box-sizing: border-box;
   text-decoration: none;
@@ -21,7 +20,6 @@
   padding: 0;
   margin: 0;
 }
-
 
 html,
 body,
@@ -33,8 +31,12 @@ body,
   left: 0;
   width: 100%;
   height: 100%;
-  color: aliceblue;
+  color: var(--popup_fontColor);
   font-size: 16px;
+}
+
+h1{
+  font-size: 50px;
 }
 
 .experience_text_in_scene > div, .education_text_in_scene > div, .proj1_text_in_scene > div, .proj2_text_in_scene > div, .proj3_text_in_scene > div, .proj4_text_in_scene > div {
@@ -52,7 +54,7 @@ body,
 }
 
 .experience_text_in_scene > div {
-  outline: 3px solid #8BA046;
+  outline: 3px solid oklab(66.999% -0.06064 0.1022);
   background-color: #8ba04621;
 
 }

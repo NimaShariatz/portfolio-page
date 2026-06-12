@@ -2,7 +2,7 @@ import "./Home.css"
 
 import { OrbitControls } from "@react-three/drei"
 import { Canvas } from '@react-three/fiber'
-import { Perf } from "r3f-perf"
+//import { Perf } from "r3f-perf"
 import Scene from "../components/scene"
 
 import { useState } from "react";
@@ -50,7 +50,7 @@ function Home() {
     <div className="canvas_container">
       <Canvas camera={{fov: 45, near: 0.1, far: 300}}>
         <OrbitControls rotateSpeed={0.45} makeDefault/>
-        <Perf position="top-left"/>
+        {/*<Perf position="top-left"/>*/}
         <color args={ [ '#080010' ] } attach="background" />
 
         <Scene sectionTracker={sectionTracker} triggerPopup={triggerPopup} handle_setSectionTracker={handle_setSectionTracker} handle_triggerPopup={handle_triggerPopup}/>
