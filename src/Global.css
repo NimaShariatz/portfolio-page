@@ -59,35 +59,6 @@ h6{
   font-size: 1.25rem;
 }
 
-.experience_text_in_scene > div, .education_text_in_scene > div, .proj1_text_in_scene > div, .proj2_text_in_scene > div, .proj3_text_in_scene > div, .proj4_text_in_scene > div {
-  font-weight: 800;
-  user-select: none;
-  padding-block: 5px;
-  padding-inline: 10px;
-  border-radius: 5px;
-  backdrop-filter: blur(1px);
-  opacity: 0;
-  pointer-events: none;
-  font-size: 18px;
-  white-space: nowrap;/* no new lines*/
-  display: inline-block;/* no new lines*/
-}
-
-.experience_text_in_scene > div {
-  outline: 3px solid var(--exp_color);
-  background-color: var(--exp_border);
-
-}
-
-.education_text_in_scene > div {
-  outline: 3px solid var(--edu_color);
-  background-color: var(--edu_border);
-}
-
-.proj1_text_in_scene > div, .proj2_text_in_scene > div, .proj3_text_in_scene > div, .proj4_text_in_scene > div {
-  outline: 3px solid var(--proj_color);
-  background-color: var(--proj_border);
-}
 
 
 
