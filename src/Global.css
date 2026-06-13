@@ -1,6 +1,7 @@
 :root{
 
   --popup_fontColor: aliceblue;
+  --popup_fontColor_soft: rgba(240, 248, 255, 0.5);
   --edu_color: #c22652;
   --edu_border: #c2265256;
 
@@ -12,7 +13,7 @@
   
 }
 
-*{
+* {
   box-sizing: border-box;
   text-decoration: none;
   border: none;
