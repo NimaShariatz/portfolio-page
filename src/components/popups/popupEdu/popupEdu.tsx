@@ -12,8 +12,8 @@ function PopupEdu({ triggerPopup, handle_triggerPopup }: PopupEduProps) {
 
   return(
 
-    <div className="edu_container" style={{opacity: triggerPopup ? '1' : '0', pointerEvents: triggerPopup ? 'auto' : 'none'}}>
-      <div className="edu_content" style={{transform: triggerPopup ? 'translateY(-15px)' : 'translateY(0px)'}}>
+    <div className="edu_container" style={{opacity: triggerPopup ? '1' : '0', pointerEvents: triggerPopup ? 'auto' : 'none'}} onClick={() => handle_triggerPopup('Edu_popup')}>
+      <div className="edu_content" style={{transform: triggerPopup ? 'translateY(-15px)' : 'translateY(0px)'}} onClick={(e) => e.stopPropagation()}>
         
         <div className="edu_topSection">
             <p>Education</p>
@@ -23,54 +23,55 @@ function PopupEdu({ triggerPopup, handle_triggerPopup }: PopupEduProps) {
         </div>
 
         <div className="edu_header_container">
+
+          <div className="circ_section_container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="250px" viewBox="0 0 24 24">
+              <path fill="#c22652" d="m21.45 8.61l-9-4.5a1 1 0 0 0-.89 0l-6 3l-3 1.5l-1 .5a1 1 0 0 0-.55.89v6h2v-5.38l8.55 4.28c.14.07.29.11.45.11s.31-.04.45-.11l9-4.5c.34-.17.55-.52.55-.89s-.21-.72-.55-.89Z" className="b"></path>
+              <path fill="#8f183a" d="M12 17c-.46 0-.93-.11-1.34-.32L5 13.85v1.59C5 17.5 8.12 20 12 20s7-2.49 7-4.56v-1.59l-5.66 2.83c-.41.21-.88.32-1.34.32" className="b"></path>
+            </svg>
+          </div>
+
           <div className="edu_title_container">
             <h1 className="edu_title">Bsc in Computing Science</h1>
             <h4>University of Alberta</h4>
             <p className="edu_date">Sept 2021 - April 2025</p>
           </div>
 
-          <div className="circ_section_container">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" viewBox="0 0 24 24">
-              <path fill="#c22652" d="m21.45 8.61l-9-4.5a1 1 0 0 0-.89 0l-6 3l-3 1.5l-1 .5a1 1 0 0 0-.55.89v6h2v-5.38l8.55 4.28c.14.07.29.11.45.11s.31-.04.45-.11l9-4.5c.34-.17.55-.52.55-.89s-.21-.72-.55-.89Z" className="b"></path>
-              <path fill="#8f183a" d="M12 17c-.46 0-.93-.11-1.34-.32L5 13.85v1.59C5 17.5 8.12 20 12 20s7-2.49 7-4.56v-1.59l-5.66 2.83c-.41.21-.88.32-1.34.32" className="b"></path>
-            </svg>
-          </div>
-
         </div>
 
 
         <div className="coursework_container">
-          <h2>
+          <h3>
               Notable Coursework
-          </h2>
+          </h3>
 
           <div className="coursework_grid">
             <div>
-              <h4>CMPUT 301 - Introduction to Software Engineering</h4>
+              <h6>CMPUT 301 - Introduction to Software Engineering</h6>
+              <p>Android Studio, Google Firebase</p>
+            </div>
+            <div>
+              <h6>CMPUT 302 - Introduction to Human Computer Interaction</h6>
               <p>UX and UI Design</p>
             </div>
             <div>
-              <h4>CMPUT 302 - Introduction to Human Computer Interaction</h4>
-              <p>UX and UI Design</p>
-            </div>
-            <div>
-              <h4>CMPUT 401 - Software Process and Product Management</h4>
+              <h6>CMPUT 401 - Software Process and Product Management</h6>
               <p>Django, Flutter, Client Interaction</p>
             </div>
             <div>
-              <h4>CMPUT 402 - Software Quality</h4>
+              <h6>CMPUT 402 - Software Quality</h6>
               <p>Java, Unit testing</p>
             </div>
             <div>
-              <h4>CMPUT 404 - Web Applications and Architecture</h4>
-              <p>DJango, Heroku</p>
+              <h6>CMPUT 404 - Web Applications and Architecture</h6>
+              <p>Django, Heroku</p>
             </div>
             <div>
-              <h4>CMPUT 455 - Search, Knowledge and Simulation</h4>
+              <h6>CMPUT 455 - Search, Knowledge and Simulation</h6>
               <p>Python</p>
             </div>
             <div>
-              <h4>CMPUT 461 - Introduction to Natural Language Processing</h4>
+              <h6>CMPUT 461 - Introduction to Natural Language Processing</h6>
               <p>Python</p>
             </div>
           </div>
