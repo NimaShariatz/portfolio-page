@@ -38,6 +38,21 @@ body,
 h1{
   font-size: 50px;
 }
+h2{
+  font-size: 36px;
+}
+h3{
+  font-size: 28px;
+}
+h4{
+  font-size: 24px;
+}
+h5{
+  font-size: 22px;
+}
+h6{
+  font-size: 20px;
+}
 
 .experience_text_in_scene > div, .education_text_in_scene > div, .proj1_text_in_scene > div, .proj2_text_in_scene > div, .proj3_text_in_scene > div, .proj4_text_in_scene > div {
   font-weight: 800;
@@ -54,8 +69,8 @@ h1{
 }
 
 .experience_text_in_scene > div {
-  outline: 3px solid #8ba046;
-  background-color: #8ba04621;
+  outline: 3px solid var(--exp_color);
+  background-color: var(--exp_border);
 
 }
 
@@ -65,8 +80,8 @@ h1{
 }
 
 .proj1_text_in_scene > div, .proj2_text_in_scene > div, .proj3_text_in_scene > div, .proj4_text_in_scene > div {
-  outline: 3px solid #b8ae8946;
-  background-color: #b8ae8921;
+  outline: 3px solid var(--proj_color);
+  background-color: var(--proj_border);
 }
 
 
