@@ -414,7 +414,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         center
         distanceFactor={7}
         >
-          PROJECT 1
+          IMAGINE CITIES
         </Html>
       </group>
 
