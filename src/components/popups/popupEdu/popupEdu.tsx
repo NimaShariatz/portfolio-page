@@ -13,7 +13,7 @@ function PopupEdu({ triggerPopup, handle_triggerPopup }: PopupEduProps) {
   return(
 
     <div className="edu_container" style={{opacity: triggerPopup ? '1' : '0', pointerEvents: triggerPopup ? 'auto' : 'none'}} onClick={() => handle_triggerPopup('Edu_popup')}>
-      <div className="edu_content" style={{transform: triggerPopup ? 'translateY(-15px)' : 'translateY(0px)'}} onClick={(e) => e.stopPropagation()}>
+      <div className="edu_content" style={{transform: triggerPopup ? 'translateY(-12px)' : 'translateY(0px)'}} onClick={(e) => e.stopPropagation()}>
         
         <div className="topSection edu_topSection">
           <p>Education</p>

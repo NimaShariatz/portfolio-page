@@ -42,7 +42,10 @@
   
 }
 .circular_shortcut:hover{
-  outline-color: aliceblue;
+  outline-color: var(--popup_fontColor);
+}
+.circular_shortcut:active{
+  background-color: var(--popup_fontColor);
 }
 
 .education_shortcut{

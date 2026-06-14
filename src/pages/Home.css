@@ -61,7 +61,7 @@
   background: var(--popup_container_background);
   border-radius: 15px;
   padding: 30px 40px;
-  transform: translateY(15px);
+  transform: translateY(12px);
   overflow-y: auto;
   cursor: auto;
   transition: transform .4s ease, box-shadow .25s ease-in-out;
@@ -128,9 +128,9 @@
 
 
 @media (max-width: 576px) {
-  .edu_content {
+  .edu_content, .proj1_content {
     width: 95%;
-    height: 95%;
+    height: 93%;
     padding: 10px 20px;
   }
 }
