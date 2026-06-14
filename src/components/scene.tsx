@@ -377,7 +377,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         center
         distanceFactor={9}
         >
-          EDUCATION
+          Education
         </Html>
       </group>
 
@@ -396,7 +396,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         center
         distanceFactor={7}
         >
-          EXPERIENCE
+          Experience
         </Html>
       </group>
 
@@ -414,7 +414,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         center
         distanceFactor={7}
         >
-          IMAGINE CITIES
+          AshBloom
         </Html>
       </group>
 

@@ -131,6 +131,13 @@
   .edu_content, .proj1_content {
     width: 95%;
     height: 93%;
-    padding: 10px 20px;
+    padding: 15px 10px;
+  }
+
+  .edu_content:hover {
+    box-shadow: inset 0px 0px 10px 1px var(--edu_border);
+  }
+  .proj1_content:hover {
+    box-shadow: inset 0px 0px 10px 1px var(--proj_border);
   }
 }

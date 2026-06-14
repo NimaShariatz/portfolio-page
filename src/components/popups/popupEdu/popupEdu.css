@@ -90,6 +90,9 @@
   .circ_section_container{
     display: none;
   }
+  .coursework_container{
+    padding-inline: 10px;
+  }
 }
 
 
