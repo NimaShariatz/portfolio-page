@@ -18,6 +18,12 @@ function PopupProj1({ triggerPopup, handle_triggerPopup }: PopupProj1Props) {
           </svg>
         </div>
 
+        <img className="project_img" width="100%" height="350px" src="./Project/Ashbloom.png"/>
+        <h1 className="proj_title">AshBloom</h1>
+
+        <div>
+          
+        </div>
 
 
       </div>

@@ -71,14 +71,14 @@
   outline: 3px solid var(--edu_border);
 }
 .edu_content:hover {
-  box-shadow: inset 0px 0px 10px 5px var(--edu_border);
+  box-shadow: inset 0px 0px 10px 4px var(--edu_border);
 }
 .proj1_content{
   box-shadow: inset 0px 0px 10px 1px var(--proj_border);
   outline: 3px solid var(--proj_border);
 }
 .proj1_content:hover {
-  box-shadow: inset 0px 0px 10px 5px var(--proj_border);
+  box-shadow: inset 0px 0px 10px 4px var(--proj_border);
 }
 
 .edu_content::selection {
