@@ -10,7 +10,7 @@ function PopupProj4({ triggerPopup, handle_triggerPopup }: PopupProj4Props) {
 
     <div className="proj4_container" style={{opacity: triggerPopup ? '1' : '0', pointerEvents: triggerPopup ? 'auto' : 'none'}} onClick={() => handle_triggerPopup('Proj4_popup')} aria-hidden={!triggerPopup}>
       <div className="proj4_content" style={{transform: triggerPopup ? 'translateY(-15px)' : 'translateY(0px)'}}>
-        <p style={{paddingLeft:"15%"}}> To be completed: June 14th</p>
+        <p style={{paddingLeft:"15%"}}> To be completed: June 15th</p>
       </div>
     </div>
 

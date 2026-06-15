@@ -432,7 +432,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         center
         distanceFactor={7}
         >
-          PROJECT 2
+          Imagine Cities
         </Html>
       </group>
 
@@ -450,7 +450,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         center
         distanceFactor={7}
         >
-          PROJECT 3
+          Henning The Navigator
         </Html>
       </group>
 
@@ -468,7 +468,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         center
         distanceFactor={7}
         >
-          PROJECT 4
+          FoodUpcycling
         </Html>
       </group>
 

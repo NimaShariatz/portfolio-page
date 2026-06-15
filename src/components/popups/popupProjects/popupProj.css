@@ -37,6 +37,9 @@
 .project_link:hover{
   opacity: 0.7;
 }
+.project_link:active{
+  color: var(--popup_fontColor);
+}
 
 .project_link_languages_container div{
   display: flex;
@@ -118,6 +121,9 @@
   list-style-type:disc;
   list-style-position: inside;
 }
+.unordered_list li{
+  padding-block: 3px;
+}
 .unordered_list li::marker{
   color: var(--proj_color);
 }
@@ -135,7 +141,7 @@
     height: 250px;
   }
   .project_info_container{
-    padding-inline: 5px;
+    padding-inline: 7px;
   }
 
 }

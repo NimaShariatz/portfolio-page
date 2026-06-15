@@ -10,10 +10,10 @@ import { useState } from "react";
 import PopupEdu from "../components/popups/popupEdu/popupEdu"
 import ShortcutCircles from "../components/shortcutCircles/shortcutCircles"
 import PopupExp from "../components/popups/popupExp/popupExp"
-import PopupProj1 from "../components/popups/popupProj1/popupProj1"
-import PopupProj2 from "../components/popups/popupProj2/popupProj2"
-import PopupProj3 from "../components/popups/popupProj3/popupProj3"
-import PopupProj4 from "../components/popups/popupProj4/popupProj4"
+import PopupProj1 from "../components/popups/popupProjects/popupProj1/popupProj1"
+import PopupProj2 from "../components/popups/popupProjects/popupProj2/popupProj2"
+import PopupProj3 from "../components/popups/popupProjects/popupProj3/popupProj3"
+import PopupProj4 from "../components/popups/popupProjects/popupProj4/popupProj4"
 
 function Home() {
   
