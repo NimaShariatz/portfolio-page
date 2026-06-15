@@ -8,8 +8,8 @@ interface PopupProj1Props {
 function PopupProj1({ triggerPopup, handle_triggerPopup }: PopupProj1Props) {
   return(
 
-    <div className="proj1_container" style={{opacity: triggerPopup ? '1' : '0', pointerEvents: triggerPopup ? 'auto' : 'none'}} onClick={() => handle_triggerPopup('Proj1_popup')}>
-      <div className="proj1_content" style={{transform: triggerPopup ? 'translateY(-12px)' : 'translateY(0px)'}} onClick={(e) => e.stopPropagation()}>
+    <div className="proj_container" style={{opacity: triggerPopup ? '1' : '0', pointerEvents: triggerPopup ? 'auto' : 'none'}} onClick={() => handle_triggerPopup('Proj1_popup')}>
+      <div className="proj_content" style={{transform: triggerPopup ? 'translateY(-12px)' : 'translateY(0px)'}} onClick={(e) => e.stopPropagation()}>
         
         <div className="topSection proj_topSection">
           <p>Project</p>
@@ -18,7 +18,7 @@ function PopupProj1({ triggerPopup, handle_triggerPopup }: PopupProj1Props) {
           </svg>
         </div>
 
-        <img className="project_img" width="100%" height="350px" src="./Project/Ashbloom.png"/>
+        <img className="project_img" src="./Project/Ashbloom.png"/>
 
         <div className="project_link_languages_container">
 
