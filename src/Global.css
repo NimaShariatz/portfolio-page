@@ -1,5 +1,4 @@
 :root{
-
   --popup_fontColor: aliceblue;
   --popup_fontColor_soft: rgba(240, 248, 255, 0.5);
   --edu_color: #c22652;
@@ -10,10 +9,14 @@
 
   --proj_color: #b8ae89;
   --proj_border: #b8ae898f;
+  --language_bg: rgb(20, 20, 20);
+  --language_outline: rgb(30, 30, 30);
 
   --popup_background: #0900144d;
   --popup_container_background: linear-gradient( to right top, #0a0a0abd, #131313e6);
   --popup_softBackground: rgba(255, 255, 255, 0.015);
+
+
 } 
 
 * {
@@ -93,15 +96,12 @@ h6{
 
 
 ::-webkit-scrollbar {
-  width: 12px;
-    
+  width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--edu_border);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--edu_color);
   cursor: pointer;
 }
 ::-webkit-scrollbar-track {
