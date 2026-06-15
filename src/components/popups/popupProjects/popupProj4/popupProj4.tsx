@@ -1,4 +1,3 @@
-import "./popupProj4.css"
 
 interface PopupProj4Props {
   triggerPopup: boolean;
