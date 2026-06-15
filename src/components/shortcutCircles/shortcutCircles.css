@@ -49,13 +49,13 @@
 }
 
 .education_shortcut{
-  background-color: #c2262b;
+  background-color: var(--edu_color);
 }
 .proj_shortcut{
-  background-color: #b8ae89;
+  background-color: var(--proj_color);
 }
 .experience_shortcut{
-  background-color: #8ba046;
+  background-color: var(--exp_color);
 }
 
 

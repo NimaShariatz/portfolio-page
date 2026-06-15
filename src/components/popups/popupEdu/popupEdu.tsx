@@ -60,7 +60,7 @@ function PopupEdu({ triggerPopup, handle_triggerPopup }: PopupEduProps) {
             </div>
             <div>
               <h6>CMPUT 402 - Software Quality</h6>
-              <p>Java, Unit testing</p>
+              <p>Java, Unit Testing</p>
             </div>
             <div>
               <h6>CMPUT 404 - Web Applications and Architecture</h6>

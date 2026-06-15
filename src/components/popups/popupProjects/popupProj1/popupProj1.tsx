@@ -72,7 +72,8 @@ function PopupProj1({ triggerPopup, handle_triggerPopup }: PopupProj1Props) {
           </ul>
           <h6>Personal Contributions</h6>
           <ul className="unordered_list">
-            <li>Responsible for the overall construction of the application</li>
+            <li>Responsible for the overall construction of the frontend application</li>
+            <li>Repository structuring and task assignment</li>
             <li>Point of contact for internal teams</li>
             <li>General color application and various components (menu, header, settings, etc...)</li>
           </ul>
