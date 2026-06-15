@@ -34,7 +34,7 @@ function PointLightWithHelper({ position, color, intensity, index, start_pointLi
 
       if (index==0){
         gsap.to(lightRef.current, {// bicycle
-          intensity: 0.15,
+          intensity: 0.1,
           duration: 1.3,
           delay: spotlight_coffee_tablet
         });

@@ -48,10 +48,10 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
   const moonLightRef = useRef<THREE.PointLight>(null!);
   //useHelper(moonLightRef, THREE.PointLightHelper, 0.5, 'teal');
 
-  const coffeeLightRef = useRef<THREE.PointLight>(null!);
+  //const coffeeLightRef = useRef<THREE.PointLight>(null!);
   //useHelper(coffeeLightRef, THREE.PointLightHelper, 0.1, 'teal');
 
-  const tabletLightRef = useRef<THREE.PointLight>(null!);
+  //const tabletLightRef = useRef<THREE.PointLight>(null!);
   //useHelper(tabletLightRef, THREE.PointLightHelper, 0.1, 'teal');
 
 
@@ -85,28 +85,125 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         }
       }
     })
-  }, [blender_scene.scene])
+
+  bicycle.scene.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        if (mesh.material) {
+          const sourceMaterial = mesh.material as THREE.Material & {
+            map?: THREE.Texture;
+            color?: THREE.Color | string | number;
+          }
+          mesh.material = new THREE.MeshToonMaterial({
+            map: sourceMaterial.map,
+            color: sourceMaterial.color ?? 0xffffff
+          })
+        }
+      }
+    })
+
+      tablet.scene.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        if (mesh.material) {
+          const sourceMaterial = mesh.material as THREE.Material & {
+            map?: THREE.Texture;
+            color?: THREE.Color | string | number;
+          }
+          mesh.material = new THREE.MeshToonMaterial({
+            map: sourceMaterial.map,
+            color: sourceMaterial.color ?? 0xffffff
+          })
+        }
+      }
+    })
+
+      coffee_1.scene.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        if (mesh.material) {
+          const sourceMaterial = mesh.material as THREE.Material & {
+            map?: THREE.Texture;
+            color?: THREE.Color | string | number;
+          }
+          mesh.material = new THREE.MeshToonMaterial({
+            map: sourceMaterial.map,
+            color: sourceMaterial.color ?? 0xffffff
+          })
+        }
+      }
+    })
+
+          coffee_2.scene.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        if (mesh.material) {
+          const sourceMaterial = mesh.material as THREE.Material & {
+            map?: THREE.Texture;
+            color?: THREE.Color | string | number;
+          }
+          mesh.material = new THREE.MeshToonMaterial({
+            map: sourceMaterial.map,
+            color: sourceMaterial.color ?? 0xffffff
+          })
+        }
+      }
+    })
+
+    coffee_3.scene.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        if (mesh.material) {
+          const sourceMaterial = mesh.material as THREE.Material & {
+            map?: THREE.Texture;
+            color?: THREE.Color | string | number;
+          }
+          mesh.material = new THREE.MeshToonMaterial({
+            map: sourceMaterial.map,
+            color: sourceMaterial.color ?? 0xffffff
+          })
+        }
+      }
+    })
+
+    coffee_4.scene.traverse((child) => {
+      if ((child as THREE.Mesh).isMesh) {
+        const mesh = child as THREE.Mesh;
+        if (mesh.material) {
+          const sourceMaterial = mesh.material as THREE.Material & {
+            map?: THREE.Texture;
+            color?: THREE.Color | string | number;
+          }
+          mesh.material = new THREE.MeshToonMaterial({
+            map: sourceMaterial.map,
+            color: sourceMaterial.color ?? 0xffffff
+          })
+        }
+      }
+    })
+
+  }, [blender_scene.scene, bicycle.scene, tablet.scene, coffee_1.scene, coffee_2.scene, coffee_3.scene, coffee_4.scene])
 
 
 
 
   useEffect(() => {
     if(!sectionTracker.start_spotLight){
-
+      /*
       gsap.to(coffeeLightRef.current, {
-        intensity: 1,
+        intensity: 0.0,
         duration: 3,
         delay: spotlight_coffee_tablet
       })
 
       gsap.to(tabletLightRef.current, {
-        intensity: 0.04,
+        intensity: 0,
         duration: 3,
         delay: spotlight_coffee_tablet
       })
-      
+      */
       gsap.to(spotLightRef.current, {
-        intensity: 110,
+        intensity: 80,
         duration: 3,
         delay: spotlight_coffee_tablet,
         onComplete: () => {
@@ -418,7 +515,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         </Html>
       </group>
 
-      <group position={[7.27, 1.33, 14.91]}>
+      <group position={[7.27, 1.33, 14.92]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={coffee_2_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
@@ -436,7 +533,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         </Html>
       </group>
 
-      <group position={[7.55, 1.35, 14.95]}>
+      <group position={[7.49, 1.35, 14.98]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={coffee_3_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
@@ -454,7 +551,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         </Html>
       </group>
 
-      <group position={[7.56, 1.35, 15.22]}>
+      <group position={[7.54, 1.35, 15.23]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={coffee_4_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
@@ -483,9 +580,10 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
       <PointLights start_pointLights={sectionTracker.start_pointLights} handle_setSectionTracker={handle_setSectionTracker} />{/* Imported PointLights Component */}
 
       <pointLight ref={moonLightRef} color={"#220028"} intensity={400} position={[7, 14, 14]}/>
+      {/* 
       <pointLight ref={coffeeLightRef} color={"#ffefb9"} intensity={0} position={[6.65, 1.5, 15.5]}/>
       <pointLight ref={tabletLightRef} color={"#ffefb9"} intensity={0} position={[7.8, 1.3, 16.8]}/>
-
+      */}
       <spotLight
         ref={spotLightRef}
         intensity={0} 
