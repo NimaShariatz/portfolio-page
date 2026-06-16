@@ -44,11 +44,11 @@ function PopupProj4({ triggerPopup, handle_triggerPopup }: PopupProj4Props) {
 
         <div className="project_info_container">
           <h6>The Project</h6>
-          <ul className="unordered_list">
+          <ul className="proj_list">
             <li>A community volunteer project with the aim of taking farmer donations and distributing them to beneficiaries in need by volunteers</li>
           </ul>
           <h6>Personal Contributions</h6>
-          <ul className="unordered_list">
+          <ul className="proj_list">
             <li>A brownfield project built with Flutter and Django with the built-in SQLite DB as a placeholder for development</li>
             <li>Responsible for some backend logic with Django, sprint planning, and documentation</li>
           </ul>

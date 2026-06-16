@@ -68,11 +68,11 @@ function PopupProj2({ triggerPopup, handle_triggerPopup }: PopupProj2Props) {
 
         <div className="project_info_container">
           <h6>The Project</h6>
-          <ul className="unordered_list">
+          <ul className="proj_list">
             <li>A learning and planning tool for neighborhoods in local development, talent aquisition and general guidance</li>
           </ul>
           <h6>Personal Contributions</h6>
-          <ul className="unordered_list">
+          <ul className="proj_list">
             <li>Responsible for the frontend conversion from Django markup to ReactJS syntax</li>
             <li>ReactJS related page and component creation as well as API work</li>
           </ul>

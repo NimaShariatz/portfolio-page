@@ -34,12 +34,42 @@ function PopupExp({ triggerPopup, handle_triggerPopup }: PopupExpProps) {
           </div>
 
           <div className="exp_title_container">
-            <h1 className="exp_title">Bsc in Computing Science</h1>
-            <h4>University of Alberta</h4>
-            <p className="exp_date">Sept 2021 - April 2025</p>
+            <h1 className="exp_title">Roles and Contributions</h1>
+            <h4>In the programming world</h4>
           </div>
 
         </div>
+
+        <div className="exp_work_container">
+          <div>
+            <h6>UAlberta iGEM Team</h6>
+            <div className="exp_work_container_row">
+              <h5>2024 & 2025 iGEM Wiki Lead, Current Advisor</h5>
+              <p>April 2024 – present</p>
+            </div>
+            <ul className="exp_list">
+              <li>Design and produce a novel wiki to display scientific results for the 2024 & 2025 University of Alberta entry</li>
+              <li>Communicate with groups of other disciplines to meet past and new requriements</li>
+              <li>Manage developers to produce layouts and components</li>
+              <li>For 2026 and beyond, advise new developers with documentation, task completion, and <a className="exp_link" href='https://nimashariatz.github.io/Blender-and-ThreeJS-Basics/' target='#blank'>tutorials</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="exp_work_container">
+          <div>
+            <h6>University of Alberta</h6>
+            <div className="exp_work_container_row">
+              <h5>Undergraduate Teaching Assistant</h5>
+              <p>January 2024 - January 2025</p>
+            </div>
+            <ul className="exp_list">
+              <li>Interact with students in assistance to their coursework while evaluating and providing feedback to student work</li>
+              <li>Work with Professor to meet timelines and create grading criteria for assessments</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
 

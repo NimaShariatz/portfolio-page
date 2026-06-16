@@ -73,12 +73,12 @@ function PopupProj3({ triggerPopup, handle_triggerPopup }: PopupProj3Props) {
 
         <div className="project_info_container">
           <h6>The Project</h6>
-          <ul className="unordered_list">
+          <ul className="proj_list">
             <li>A map navigation tool for the flight simulator IL-2 Sturmovik: Great Battles. Wavepoints on a map are set with distance, speed and heading which output a navigational path</li>
             <li>Used by players for route planning and information sharing for group flights</li>
           </ul>
           <h6>Personal Contributions</h6>
-          <ul className="unordered_list">
+          <ul className="proj_list">
             <li>A personal project under steady iterative development</li>
             <li>Uses ReactJS and Firestore (JSON DB) for live instances</li>
             <li>Capable of sharing waypoints, targets, drawings, and notes either by JSON download, or through a live instance using Firestore</li>
