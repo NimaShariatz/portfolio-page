@@ -34,7 +34,6 @@ function PopupProj1({ triggerPopup, handle_triggerPopup }: PopupProj1Props) {
               9 28.124a2.87 2.87 0 0 0 
               1.457.369c3.02 0 7.455-3.804 10.74-9.493C25.061 12.304 25.87 5.532 23 3.876a2.87 2.87 0 0 0-1.457-.369"/>
             </svg>
-
                               
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" className='language'>
               <path fill="#e44f26" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z" />

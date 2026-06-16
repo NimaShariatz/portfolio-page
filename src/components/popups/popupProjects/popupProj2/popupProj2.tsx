@@ -61,7 +61,7 @@ function PopupProj2({ triggerPopup, handle_triggerPopup }: PopupProj2Props) {
           </div>
 
 
-          <a className="project_link" href='https://2025.igem.wiki/ualberta/' target='#blank'>Check Live Site <svg viewBox="0 0 24 24"><path d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></a>
+          <a className="project_link" href='https://www.imaginecities.com/' target='#blank'>Check Live Site <svg viewBox="0 0 24 24"><path d="M5 17.59L15.59 7H9V5h10v10h-2V8.41L6.41 19z"/></svg></a>
         </div>
 
         <h1 className="proj_title">Imagine Cities</h1>
