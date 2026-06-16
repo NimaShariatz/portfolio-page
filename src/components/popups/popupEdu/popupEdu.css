@@ -31,7 +31,7 @@
 }
 
 
-.circ_section_container{
+.edu_circ_section_container{
   display: flex;
   align-items: center;
   justify-content: left;
@@ -87,7 +87,7 @@
   .edu_title_container{
     width: 100%;
   }
-  .circ_section_container{
+  .edu_circ_section_container{
     display: none;
   }
   .coursework_container{
