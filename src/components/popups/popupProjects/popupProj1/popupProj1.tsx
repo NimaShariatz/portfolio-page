@@ -67,7 +67,7 @@ function PopupProj1({ triggerPopup, handle_triggerPopup }: PopupProj1Props) {
         <div className="project_info_container">
           <h6>The Project</h6>
           <ul className="unordered_list">
-            <li>A wiki for the 2025 University of Alberta iGEM team to showcase their results in synthetic biology</li>
+            <li>A static wiki for the 2025 University of Alberta iGEM team to showcase their results in synthetic biology</li>
             <li>An interdisciplinary volunteer project program involving graduate students from a variety of backgrounds</li>
           </ul>
           <h6>Personal Contributions</h6>

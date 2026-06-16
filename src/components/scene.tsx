@@ -501,7 +501,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={coffee_1_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
-          <meshBasicMaterial color={"#b8ae89"}/>
+          <meshBasicMaterial color={"#d4c183"}/>
         </mesh>
         </Float>
         <Html
@@ -519,7 +519,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={coffee_2_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
-          <meshBasicMaterial color={"#b8ae89"}/>
+          <meshBasicMaterial color={"#d4c183"}/>
         </mesh>
         </Float>
         <Html
@@ -537,7 +537,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={coffee_3_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
-          <meshBasicMaterial color={"#b8ae89"}/>
+          <meshBasicMaterial color={"#d4c183"}/>
         </mesh>
         </Float>
         <Html
@@ -555,7 +555,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={coffee_4_sphere}  visible={false}>
           <sphereGeometry args={[0.05, 10, 10]}/>
-          <meshBasicMaterial color={"#b8ae89"}/>
+          <meshBasicMaterial color={"#d4c183"}/>
         </mesh>
         </Float>
         <Html

@@ -7,14 +7,14 @@
   --exp_color: #8ba046;
   --exp_border: #8ba0468f;
 
-  --proj_color: #b8ae89;
-  --proj_border: #b8ae898f;
+  --proj_color: #d4c183;
+  --proj_border: #d4c1838f;
   --language_bg: rgb(20, 20, 20);
   --language_outline: rgb(30, 30, 30);
 
   --popup_background: #0900144d;
   --popup_container_background: linear-gradient( to right top, #0a0a0abd, #131313e6);
-  --popup_softBackground: rgba(255, 255, 255, 0.015);
+  --popup_softBackground: rgba(255, 255, 255, 0.03);
 
 
 } 
