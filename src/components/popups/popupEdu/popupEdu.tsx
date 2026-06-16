@@ -1,4 +1,5 @@
 import "./popupEdu.css"
+import "../popup.css"
 
 interface PopupEduProps {
   triggerPopup: boolean;

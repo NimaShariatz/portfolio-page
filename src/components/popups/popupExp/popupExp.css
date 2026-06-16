@@ -94,4 +94,7 @@
     padding-inline: 10px;
     flex-direction: column;
   }
+    .exp_work_container{
+    padding-inline: 15px;
+  }
 }

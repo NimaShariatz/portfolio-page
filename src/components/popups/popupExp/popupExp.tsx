@@ -1,4 +1,5 @@
 import "./popupExp.css"
+import "../popup.css"
 
 interface PopupExpProps {
   triggerPopup: boolean;
@@ -44,14 +45,28 @@ function PopupExp({ triggerPopup, handle_triggerPopup }: PopupExpProps) {
           <div>
             <h6>UAlberta iGEM Team</h6>
             <div className="exp_work_container_row">
-              <h5>2024 & 2025 iGEM Wiki Lead, Current Advisor</h5>
-              <p>April 2024 – present</p>
+              <h5>2024 & 2025 iGEM Wiki Lead, Current Advisor <small>[volunteer]</small></h5>
+              <p>April 2024 – Present</p>
             </div>
             <ul className="exp_list">
               <li>Design and produce a novel wiki to display scientific results for the 2024 & 2025 University of Alberta entry</li>
               <li>Communicate with groups of other disciplines to meet past and new requriements</li>
               <li>Manage developers to produce layouts and components</li>
               <li>For 2026 and beyond, advise new developers with documentation, task completion, and <a className="exp_link" href='https://nimashariatz.github.io/Blender-and-ThreeJS-Basics/' target='#blank'>tutorials</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="exp_work_container">
+          <div>
+            <h6>Imagine Cities</h6>
+            <div className="exp_work_container_row">
+              <h5>Frontend Developer <small>[volunteer]</small></h5>
+              <p>January 2026 - Present</p>
+            </div>
+            <ul className="exp_list">
+              <li>Create new pages and components both static and dynamic using ReactJS</li>
+              <li>Meet monthly task requriements set by client</li>
             </ul>
           </div>
         </div>
@@ -69,6 +84,7 @@ function PopupExp({ triggerPopup, handle_triggerPopup }: PopupExpProps) {
             </ul>
           </div>
         </div>
+
 
       </div>
     </div>

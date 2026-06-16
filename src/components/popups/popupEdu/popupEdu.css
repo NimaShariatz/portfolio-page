@@ -40,8 +40,8 @@
 }
 
 .coursework_container{
+  padding-inline: 25px;
   padding-block: 15px;
-  padding-inline: 20px;
   margin-top: 50px;
 }
 .coursework_container h3{
