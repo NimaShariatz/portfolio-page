@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { spotlight_coffee_tablet } from "../constants";
 
 const pointLights = [
-  { id: 1, position: [9.42, 2.05, 9.85] as [number, number, number], color: "#ffce63", intensity: 0 },
+  { id: 1, position: [9.02, 2.02, 10.1] as [number, number, number], color: "#ffce63", intensity: 0 },
   { id: 2, position: [4.9, 4.5, 13] as [number, number, number], color: "#ffce63", intensity: 0 },
   { id: 3, position: [4.9, 4.5, 10.9] as [number, number, number], color: "#ffce63", intensity: 0 },
   { id: 4, position: [4.9, 4.6, -1] as [number, number, number], color: "#ffce63", intensity: 0 },

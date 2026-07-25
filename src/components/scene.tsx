@@ -264,7 +264,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
 
       <primitive object={blender_scene.scene} />
 
-      <primitive object={bicycle.scene} position={[10.5, 0, 9.55]}
+      <primitive object={bicycle.scene} position={[10.1, 0, 9.82]}
         onPointerEnter={ (e: ThreeEvent<PointerEvent>) => {
           if(sectionTracker.trigger_camera){ // if trigger_camera is true, then allow the logic below to function
             setCursorChanger(true);
@@ -460,7 +460,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
         <meshBasicMaterial color={"#ffffff"}/>
       </mesh>      
 
-      <group position={[9.5, 2.42, 9.7]}>
+      <group position={[9.08, 2.42, 9.97]}>
         <Float floatingRange={[0, 0.06]} rotationIntensity={0} speed={5}>
         <mesh ref={bicycle_sphere} visible={false}>
           <sphereGeometry args={[0.07, 10, 10]}/>
