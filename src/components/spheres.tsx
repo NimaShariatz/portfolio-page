@@ -14,23 +14,23 @@ import { useFrame } from "@react-three/fiber";
 */
 
 const sphereList = [
-  { id: 1, position: [8.6, 5.7, 10.3], arg_values: [0.2, 10, 10], color: "#a9698a", multi_factor: [0.05, 0.8, 0.7], reset_position: [0, 0, 27]},
-  { id: 2, position: [8.6, 5.7, 10.3], arg_values: [0.2, 10, 10], color: "#a9698a", multi_factor: [0.05, 0.5, 1.15], reset_position: [0, 0, 34]},
-  { id: 3, position: [8.6, 5.7, 10.3], arg_values: [0.2, 10, 10], color: "#a9698a", multi_factor: [0.05, 0.6, 1.10], reset_position: [0, 0, 39]},
+  { id: 1, position: [8.6, 5.7, 11.3], arg_values: [0.2, 10, 10], color: "#a9698a", multi_factor: [0.05, 0.8, 0.7], reset_position: [0, 0, 27]},
+  { id: 2, position: [8.6, 5.7, 11.3], arg_values: [0.2, 10, 10], color: "#a9698a", multi_factor: [0.05, 0.5, 1.15], reset_position: [0, 0, 34]},
+  { id: 3, position: [8.6, 5.7, 11.3], arg_values: [0.2, 10, 10], color: "#a9698a", multi_factor: [0.05, 0.6, 1.10], reset_position: [0, 0, 39]},
 
-  { id: 4, position: [12.8, 5.3, 9.2], arg_values: [0.2, 10, 10], color: "#f39b4d", multi_factor: [0.05, 0.6, 1.10], reset_position: [0, 0, 39]},
-  { id: 5, position: [12.8, 5.3, 9.2], arg_values: [0.2, 10, 10], color: "#f39b4d", multi_factor: [0.05, 0.6, 1.08], reset_position: [0, 0, 42]},
+  { id: 4, position: [12.8, 5.3, 10], arg_values: [0.2, 10, 10], color: "#f39b4d", multi_factor: [0.05, 0.6, 1.10], reset_position: [0, 0, 39]},
+  { id: 5, position: [12.8, 5.3, 10], arg_values: [0.2, 10, 10], color: "#f39b4d", multi_factor: [0.05, 0.6, 1.08], reset_position: [0, 0, 42]},
 
-  { id: 6, position: [8.4, 7, 9.5], arg_values: [0.2, 10, 10], color: "#e76b3c", multi_factor: [0.05, 0.5, 1.07], reset_position: [0, 0, 42]},
-  { id: 7, position: [8.4, 7, 9.5], arg_values: [0.2, 10, 10], color: "#e76b3c", multi_factor: [0.05, 0.65, 1.0], reset_position: [0, 0, 48]},
-  { id: 9, position: [8.4, 7, 9.5], arg_values: [0.2, 10, 10], color: "#e76b3c", multi_factor: [0.05, 0.7, 0.9], reset_position: [0, 0, 39]},
+  { id: 6, position: [8.4, 7, 10], arg_values: [0.2, 10, 10], color: "#e76b3c", multi_factor: [0.05, 0.5, 1.07], reset_position: [0, 0, 42]},
+  { id: 7, position: [8.4, 7, 10], arg_values: [0.2, 10, 10], color: "#e76b3c", multi_factor: [0.05, 0.65, 1.0], reset_position: [0, 0, 48]},
+  { id: 9, position: [8.4, 7, 10], arg_values: [0.2, 10, 10], color: "#e76b3c", multi_factor: [0.05, 0.7, 0.9], reset_position: [0, 0, 39]},
 
-  { id: 10, position: [10.5, 6.5, 7.8], arg_values: [0.2, 10, 10], color: "#f5c47b", multi_factor: [0.05, 0.68, 1], reset_position: [0, 0, 39]},
-  { id: 11, position: [10.5, 6.5, 7.8], arg_values: [0.2, 10, 10], color: "#f5c47b", multi_factor: [0.05, 0.71, 0.85], reset_position: [0, 0, 42]},
-  { id: 12, position: [10.5, 6.5, 7.8], arg_values: [0.2, 10, 10], color: "#f5c47b", multi_factor: [0.05, 0.7, 0.9], reset_position: [0, 0, 45]},
+  { id: 10, position: [10.5, 5.5, 9], arg_values: [0.2, 10, 10], color: "#f5c47b", multi_factor: [0.05, 0.68, 1], reset_position: [0, 0, 39]},
+  { id: 11, position: [10.5, 5.5, 9], arg_values: [0.2, 10, 10], color: "#f5c47b", multi_factor: [0.05, 0.71, 0.85], reset_position: [0, 0, 42]},
+  { id: 12, position: [10.5, 5.5, 9], arg_values: [0.2, 10, 10], color: "#f5c47b", multi_factor: [0.05, 0.7, 0.9], reset_position: [0, 0, 45]},
     
-  { id: 13, position: [8, 5.5, 8.2], arg_values: [0.2, 10, 10], color: "#ff364e", multi_factor: [-0.3, 0.8, 1], reset_position: [0, 0, 55]},
-  { id: 14, position: [8, 5.5, 8.2], arg_values: [0.2, 10, 10], color: "#ff364e", multi_factor: [-0.5, 0.71, 1.1], reset_position: [0, 0, 50]},
+  { id: 13, position: [8, 5.5, 8.8], arg_values: [0.2, 10, 10], color: "#ff364e", multi_factor: [-0.3, 0.8, 1], reset_position: [0, 0, 55]},
+  { id: 14, position: [8, 5.5, 8.8], arg_values: [0.2, 10, 10], color: "#ff364e", multi_factor: [-0.5, 0.71, 1.1], reset_position: [0, 0, 50]},
 
   { id: 15, position: [9, 6.5, 19], arg_values: [0.4, 10, 10], color: "#ff364e", multi_factor: [0.3, 0.8, 0.2], reset_position: [0, 0, 45]},
 
@@ -119,12 +119,13 @@ function Spheres() {
 
       />
     ))}
-    {/*
-    <mesh position={[-4, 8.2, 12]}>
-      <sphereGeometry/>
+    {/* 
+    <mesh position={[8, 5.5, 8.8]}>
+      <sphereGeometry args={[1, 1, 1]}/>
       <meshToonMaterial color={"#ffffff"}/>
     </mesh>
     */}
+    
   </>
   )
 
