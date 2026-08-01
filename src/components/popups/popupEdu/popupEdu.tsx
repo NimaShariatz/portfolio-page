@@ -35,7 +35,7 @@ function PopupEdu({ triggerPopup, handle_triggerPopup }: PopupEduProps) {
           <div className="edu_title_container">
             <h1 className="edu_title">Bsc in Computing Science</h1>
             <h4>University of Alberta</h4>
-            <p className="edu_date">Sept 2021 - April 2025</p>
+            <p className="edu_date">Sept 2020 - April 2025</p>
           </div>
 
         </div>
