@@ -80,7 +80,10 @@ function PopupExp({ triggerPopup, handle_triggerPopup }: PopupExpProps) {
             </div>
             <ul className="exp_list">
               <li>Interact with students in assistance to their coursework while evaluating and providing feedback to student work</li>
+              <li>Create and release assignments for completion</li>
+              <li>Delegate new tasks to other TAs</li>
               <li>Work with Professor to meet timelines and create grading criteria for assessments</li>
+              
             </ul>
           </div>
         </div>

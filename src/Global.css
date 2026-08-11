@@ -42,6 +42,7 @@ body {
   font-family: 'Kanit', Arial;
   color: var(--popup_fontColor);
   font-size: 16px;
+  background-color: #080010;
 }
 
 h1{
