@@ -70,6 +70,22 @@
   transform: translateX(-40px);
   z-index: 5;
 }
+.language:nth-child(6){
+  transform: translateX(-50px);
+  z-index: 5;
+}
+.language:nth-child(7){
+  transform: translateX(-60px);
+  z-index: 5;
+}
+.language:nth-child(8){
+  transform: translateX(-70px);
+  z-index: 5;
+}
+.language:nth-child(9){
+  transform: translateX(-80px);
+  z-index: 5;
+}
 .language_animate:hover .language {
   transition: transform 0.3s ease;
 }
@@ -85,8 +101,18 @@
 .language_animate:hover .language:nth-child(5) {
   transform: translateX(20px); 
 }
-
-
+.language_animate:hover .language:nth-child(6) {
+  transform: translateX(25px); 
+}
+.language_animate:hover .language:nth-child(7) {
+  transform: translateX(30px); 
+}
+.language_animate:hover .language:nth-child(8) {
+  transform: translateX(35px); 
+}
+.language_animate:hover .language:nth-child(9) {
+  transform: translateX(40px); 
+}
 
 
 .proj_title{

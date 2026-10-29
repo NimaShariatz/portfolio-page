@@ -33,7 +33,7 @@ function Scene({ sectionTracker, triggerPopup, handle_setSectionTracker, handle_
   const [cursorChanger, setCursorChanger] = useState(false)
 
 
-  const blender_scene = useGLTF('./Blender/scene.glb');
+  const blender_scene = useGLTF('./Blender/scene_merged.glb');
   const bicycle = useGLTF('./Blender/bicycle.glb');
   const tablet = useGLTF('./Blender/tablet.glb');
   const coffee_1 = useGLTF('./Blender/coffee_1.glb');
